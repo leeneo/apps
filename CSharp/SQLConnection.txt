@@ -1,0 +1,58 @@
+function db() {
+    //活动编号  
+    var activeid = Request.Form("activeid");
+    //用户名  
+    var username = Request.Form("username");
+    //手机号码  
+    var mobile = Request.Form("mobile");
+    var conn = Server.CreateObject("ADODB.connection");
+    var rs = Server.CreateObject("adodb.recordset");
+    var userid = getUserIdByName(username);
+    conn.open("PROVIDER=SQLOLEDB;DATA SOURCE=127.0.0.1;UID=neo;PWD=900106;DATABASE=TestDB");
+    var sql = "insert into person (name,age,sex) values(" + activeid + "," + userid + ",'" + mobile + "',getdate())";
+    rs.open(sql, conn);
+    rs.close();
+    conn.close();
+    rs = null;
+    conn = null;
+}
+
+function getUserIdByName(username) {
+    var conn = Server.CreateObject("ADODB.connection");
+    var rs = Server.CreateObject("adodb.recordset");
+    conn.open("PROVIDER=SQLOLEDB;DATA SOURCE=127.0.0.1;UID=neo;PWD=900106;DATABASE=TestDB");
+    var sql = "select userid from RegUsers where chrname='" + username + "'";
+    rs.open(sql, conn);
+    if (!rs.EOF) {
+        return rs("userid");
+    }
+    rs.close();
+    conn.close();
+    rs = null;
+    conn = null;
+}
+
+function baoming() {
+    var conn = Server.CreateObject("ADODB.connection");
+    var rs = Server.CreateObject("adodb.recordset");
+    conn.open("PROVIDER=SQLOLEDB;DATA SOURCE=127.0.0.1;UID=sa;PWD=123456;DATABASE=test");
+
+    var sql = "select userid,activeid,chrtel,CONVERT(varchar(30),dtappenddate,20) as dtappenddate from baoming order by id desc";
+    rs.open(sql, conn);
+    var i = 1;
+    while (!rs.EOF && i < 31) {
+        Response.Write("<tr align='center'>");
+        Response.Write("<td>" + i + "</td>");
+        Response.Write("<td>" + getUserNameById(rs('userid')) + "</td>");
+        Response.Write("<td>" + getActiveNameById(rs('activeid')) + "</td>");
+        Response.Write("<td>" + rs('chrtel') + "</td>");
+        Response.Write("<td>" + rs('dtappenddate') + "</td>");
+        Response.Write("</tr>");
+        i++;
+        rs.movenext;
+    }
+    rs.close();
+    conn.close();
+    rs = null;
+    conn = null;
+}
