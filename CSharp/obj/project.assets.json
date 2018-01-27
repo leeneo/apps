@@ -3571,11 +3571,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "g:\\leeneo\\MyProj\\apps\\CSharp\\CSharp.csproj",
+      "projectUniqueName": "G:\\leeneo\\MyProj\\apps\\CSharp\\CSharp.csproj",
       "projectName": "CSharp",
-      "projectPath": "g:\\leeneo\\MyProj\\apps\\CSharp\\CSharp.csproj",
+      "projectPath": "G:\\leeneo\\MyProj\\apps\\CSharp\\CSharp.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "g:\\leeneo\\MyProj\\apps\\CSharp\\obj\\",
+      "outputPath": "G:\\leeneo\\MyProj\\apps\\CSharp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
