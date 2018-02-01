@@ -15,6 +15,9 @@ namespace CSharp {
             Console.WriteLine ("UniversalTime:" + TestDate.UniversalTime ());
             Console.WriteLine ("ToString:" + TestDate.ToString ());
             Console.WriteLine ("Date:" + TestDate.Date ());
+            Console.WriteLine("DateTime.Now:" + DateTime.Now);
+            Console.WriteLine("DateTime.Now.ToShortDateString():" + DateTime.Now.ToShortDateString());
+            Console.WriteLine("DateTime.Now.ToLocalTime():" + DateTime.Now.ToLocalTime());
 
             TryCatch.Run ();
 
