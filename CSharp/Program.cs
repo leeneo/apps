@@ -6,6 +6,7 @@ namespace CSharp {
     class Program {
 
         static void Main (string[] args) {
+            string date = DateTime.Now.ToString("yyyy/MM/dd");
             //JsonTest.Run();
             // Console.WriteLine ("ShortDate:" + TestDate.ShortDate ());
             // Console.WriteLine ("ShortTime:" + TestDate.ShortTime ());
@@ -19,11 +20,19 @@ namespace CSharp {
             // Console.WriteLine("DateTime.Now.ToShortDateString():" + DateTime.Now.ToShortDateString());
             // Console.WriteLine("DateTime.Now.ToLocalTime():" + DateTime.Now.ToLocalTime());
             // TryCatch.Run ();
-            string date = DateTime.Now.ToString("yyyy#MM#dd");
-            StringTest.NullTest=null;
-            Console.WriteLine("NullTest:" + StringTest.NullTest);
-            Console.WriteLine(date);
+            // StringTest.NullTest=null;
+            // Console.WriteLine("NullTest:" + StringTest.NullTest.ToString());
 
+            //object msg=StringTest.Messages="Test";
+            //msg = null;
+            //Console.WriteLine(string.IsNullOrEmpty(msg.toStirng()));//wrong:判断可能为空Object类型时不能用obj.toString();
+            //Console.WriteLine(string.IsNullOrEmpty((string)msg));//right:判断可能为空Object类型时不能用obj.toString();
+
+
+
+
+
+            Console.WriteLine(date);
             Console.ReadKey ();
 
         }
