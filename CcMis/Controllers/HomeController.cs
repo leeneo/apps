@@ -9,6 +9,11 @@ namespace CcMis.Controllers
 {
     public class HomeController : Controller
     {
+        public IActionResult AngularIndex()
+        {
+            return View();
+        }
+
         public IActionResult Index()
         {
             return View();
