@@ -12,6 +12,13 @@ namespace CcMis.Controllers
     {
         public IActionResult Index()
         {
+            //List<wxIndexMenu> res = ApiClient.Invoke<List<wxIndexMenu>>("DMenu", "GetMenus", null, false);
+            //wxParameters introduction = ApiClient.Get<List<wxParameters>>("/wxparameters/getlist").FirstOrDefault(x => x.Name == "introduction");
+            //if (introduction != null)
+            //    ViewBag.introduction = introduction.Value;
+            //var cookie = new CookieOperate();
+            //ViewBag.MemberInfo = "WeChatOpenId=" + cookie.WeChatOpenId;
+            //return View(res.Where(x => x.IsActive == "Y").ToList());
             return View();
         }
 

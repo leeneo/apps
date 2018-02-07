@@ -8,3 +8,4 @@ G:\leeneo\MyProj\apps\CcMis\obj\Debug\netcoreapp2.0\CcMis.AssemblyInfoInputs.cac
 G:\leeneo\MyProj\apps\CcMis\obj\Debug\netcoreapp2.0\CcMis.AssemblyInfo.cs
 G:\leeneo\MyProj\apps\CcMis\obj\Debug\netcoreapp2.0\CcMis.dll
 G:\leeneo\MyProj\apps\CcMis\obj\Debug\netcoreapp2.0\CcMis.pdb
+G:\leeneo\MyProj\apps\CcMis\obj\Debug\netcoreapp2.0\CcMis.csprojResolveAssemblyReference.cache
