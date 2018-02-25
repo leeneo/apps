@@ -27,13 +27,11 @@ namespace CSharp {
             //msg = null;
             //Console.WriteLine(string.IsNullOrEmpty(msg.toStirng()));//wrong:判断可能为空Object类型时不能用obj.toString();
             //Console.WriteLine(string.IsNullOrEmpty((string)msg));//right:判断可能为空Object类型时不能用obj.toString();
-
-
-
-
+            
+            Console.WriteLine(255%256);
 
             Console.WriteLine(date);
-            Console.ReadKey ();
+            // Console.ReadKey ();
 
         }
     }
