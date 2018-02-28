@@ -26,11 +26,29 @@ namespace CSharp {
             //object msg=StringTest.Messages="Test";
             //msg = null;
             //Console.WriteLine(string.IsNullOrEmpty(msg.toStirng()));//wrong:判断可能为空Object类型时不能用obj.toString();
-            //Console.WriteLine(string.IsNullOrEmpty((string)msg));//right:判断可能为空Object类型时不能用obj.toString();
-            
-            Console.WriteLine(255%256);
+            //Console.WriteLine(string.IsNullOrEmpty((string)msg));//right:判断可能为空Object类型时不能用obj.toString();            
 
-            Console.WriteLine(date);
+            // Console.WriteLine(255%256);  //255;求余
+
+            // LamdaExpression.DelTest(2,5);
+            // LamdaExpression.AnonymityTest(2,2);
+            // LamdaExpression.LamdaTest(1,2);
+
+            // DelegateTest.UseDel();
+            // DelegateTest.TestMain();
+
+            // EnumTest.GreetPeople("小小",EnumTest.Language.Chinese);
+            // EnumTest.GreetPeople("Mike",EnumTest.Language.English);
+
+            ObserveDesign.TestMain();
+
+
+
+
+
+
+
+            Console.WriteLine("\n"+date);
             // Console.ReadKey ();
 
         }
