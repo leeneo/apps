@@ -12538,12 +12538,15 @@
   },
   "project": {
     "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
     "restore": {
-      "projectUniqueName": "G:\\leeneo\\MyProj\\apps\\CcMis\\CcMis.csproj",
-      "projectName": "CcMis",
-      "projectPath": "G:\\leeneo\\MyProj\\apps\\CcMis\\CcMis.csproj",
+      "projectUniqueName": "G:\\leeneo\\MyProj\\apps\\CcMis.Web\\CcMis.Web.csproj",
+      "projectName": "CcMis.Web",
+      "projectPath": "G:\\leeneo\\MyProj\\apps\\CcMis.Web\\CcMis.Web.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "G:\\leeneo\\MyProj\\apps\\CcMis\\obj\\",
+      "outputPath": "G:\\leeneo\\MyProj\\apps\\CcMis.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

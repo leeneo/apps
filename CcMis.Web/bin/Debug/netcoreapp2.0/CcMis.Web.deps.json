@@ -21,16 +21,16 @@
   },
   "targets": {
     ".NETCoreApp,Version=v2.0": {
-      "CcMis/1.0.0": {
+      "CcMis.Web/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.All": "2.0.0",
           "Microsoft.NETCore.App": "2.0.0"
         },
         "runtime": {
-          "CcMis.dll": {}
+          "CcMis.Web.dll": {}
         },
         "compile": {
-          "CcMis.dll": {}
+          "CcMis.Web.dll": {}
         }
       },
       "Libuv/1.10.0": {
@@ -3973,7 +3973,7 @@
     }
   },
   "libraries": {
-    "CcMis/1.0.0": {
+    "CcMis.Web/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

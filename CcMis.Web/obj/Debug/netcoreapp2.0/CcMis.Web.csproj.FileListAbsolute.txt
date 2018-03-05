@@ -1,0 +1,11 @@
+G:\leeneo\MyProj\apps\CcMis.Web\bin\Debug\netcoreapp2.0\CcMis.Web.deps.json
+G:\leeneo\MyProj\apps\CcMis.Web\bin\Debug\netcoreapp2.0\CcMis.Web.runtimeconfig.json
+G:\leeneo\MyProj\apps\CcMis.Web\bin\Debug\netcoreapp2.0\CcMis.Web.runtimeconfig.dev.json
+G:\leeneo\MyProj\apps\CcMis.Web\bin\Debug\netcoreapp2.0\CcMis.Web.dll
+G:\leeneo\MyProj\apps\CcMis.Web\bin\Debug\netcoreapp2.0\CcMis.Web.pdb
+G:\leeneo\MyProj\apps\CcMis.Web\obj\Debug\netcoreapp2.0\CcMis.Web.csprojResolveAssemblyReference.cache
+G:\leeneo\MyProj\apps\CcMis.Web\obj\Debug\netcoreapp2.0\CcMis.Web.csproj.CoreCompileInputs.cache
+G:\leeneo\MyProj\apps\CcMis.Web\obj\Debug\netcoreapp2.0\CcMis.Web.AssemblyInfoInputs.cache
+G:\leeneo\MyProj\apps\CcMis.Web\obj\Debug\netcoreapp2.0\CcMis.Web.AssemblyInfo.cs
+G:\leeneo\MyProj\apps\CcMis.Web\obj\Debug\netcoreapp2.0\CcMis.Web.dll
+G:\leeneo\MyProj\apps\CcMis.Web\obj\Debug\netcoreapp2.0\CcMis.Web.pdb
