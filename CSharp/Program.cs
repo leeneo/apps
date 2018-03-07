@@ -6,19 +6,50 @@ namespace CSharp {
     class Program {
 
         static void Main (string[] args) {
+            string date = DateTime.Now.ToString("yyyy/MM/dd");
             //JsonTest.Run();
-            Console.WriteLine ("ShortDate:" + TestDate.ShortDate ());
-            Console.WriteLine ("ShortTime:" + TestDate.ShortTime ());
-            Console.WriteLine ("LongTime:" + TestDate.LongTime ());
-            Console.WriteLine ("LongDate:" + TestDate.LongDate ());
-            Console.WriteLine ("LocalTime:" + TestDate.LocalTime ());
-            Console.WriteLine ("UniversalTime:" + TestDate.UniversalTime ());
-            Console.WriteLine ("ToString:" + TestDate.ToString ());
-            Console.WriteLine ("Date:" + TestDate.Date ());
+            // Console.WriteLine ("ShortDate:" + TestDate.ShortDate ());
+            // Console.WriteLine ("ShortTime:" + TestDate.ShortTime ());
+            // Console.WriteLine ("LongTime:" + TestDate.LongTime ());
+            // Console.WriteLine ("LongDate:" + TestDate.LongDate ());
+            // Console.WriteLine ("LocalTime:" + TestDate.LocalTime ());
+            // Console.WriteLine ("UniversalTime:" + TestDate.UniversalTime ());
+            // Console.WriteLine ("ToString:" + TestDate.ToString ());
+            // Console.WriteLine ("Date:" + TestDate.Date ());
+            // Console.WriteLine("DateTime.Now:" + DateTime.Now);
+            // Console.WriteLine("DateTime.Now.ToShortDateString():" + DateTime.Now.ToShortDateString());
+            // Console.WriteLine("DateTime.Now.ToLocalTime():" + DateTime.Now.ToLocalTime());
+            // TryCatch.Run ();
+            // StringTest.NullTest=null;
+            // Console.WriteLine("NullTest:" + StringTest.NullTest.ToString());
 
-            TryCatch.Run ();
+            //object msg=StringTest.Messages="Test";
+            //msg = null;
+            //Console.WriteLine(string.IsNullOrEmpty(msg.toStirng()));//wrong:判断可能为空Object类型时不能用obj.toString();
+            //Console.WriteLine(string.IsNullOrEmpty((string)msg));//right:判断可能为空Object类型时不能用obj.toString();            
 
-            Console.ReadKey ();
+            // Console.WriteLine(255%256);  //255;求余
+
+            // LamdaExpression.DelTest(2,5);
+            // LamdaExpression.AnonymityTest(2,2);
+            // LamdaExpression.LamdaTest(1,2);
+
+            // DelegateTest.UseDel();
+            // DelegateTest.TestMain();
+
+            // EnumTest.GreetPeople("小小",EnumTest.Language.Chinese);
+            // EnumTest.GreetPeople("Mike",EnumTest.Language.English);
+
+            ObserveDesign.TestMain();
+
+
+
+
+
+
+
+            Console.WriteLine("\n"+date);
+            // Console.ReadKey ();
 
         }
     }

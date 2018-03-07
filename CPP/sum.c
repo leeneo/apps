@@ -7,6 +7,6 @@ void main()
     while(1){
         scanf("%f",&x);
         sum+=x;
-        printf("sum:%.2f\n",sum);
+        printf("sum:%.2f\n\n",sum);
     }
 }
