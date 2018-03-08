@@ -1,9 +1,0 @@
-G:\leeneo\MyProj\apps\CcMis\CcMis.Data\bin\Debug\netcoreapp2.0\CcMis.Data.deps.json
-G:\leeneo\MyProj\apps\CcMis\CcMis.Data\bin\Debug\netcoreapp2.0\CcMis.Data.dll
-G:\leeneo\MyProj\apps\CcMis\CcMis.Data\bin\Debug\netcoreapp2.0\CcMis.Data.pdb
-G:\leeneo\MyProj\apps\CcMis\CcMis.Data\obj\Debug\netcoreapp2.0\CcMis.Data.csprojResolveAssemblyReference.cache
-G:\leeneo\MyProj\apps\CcMis\CcMis.Data\obj\Debug\netcoreapp2.0\CcMis.Data.csproj.CoreCompileInputs.cache
-G:\leeneo\MyProj\apps\CcMis\CcMis.Data\obj\Debug\netcoreapp2.0\CcMis.Data.AssemblyInfoInputs.cache
-G:\leeneo\MyProj\apps\CcMis\CcMis.Data\obj\Debug\netcoreapp2.0\CcMis.Data.AssemblyInfo.cs
-G:\leeneo\MyProj\apps\CcMis\CcMis.Data\obj\Debug\netcoreapp2.0\CcMis.Data.dll
-G:\leeneo\MyProj\apps\CcMis\CcMis.Data\obj\Debug\netcoreapp2.0\CcMis.Data.pdb
