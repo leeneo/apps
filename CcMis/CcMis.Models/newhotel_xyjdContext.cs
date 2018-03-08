@@ -6,15 +6,15 @@ namespace CcMis.Models
 {
     public partial class newhotel_xyjdContext : DbContext
     {
-        public virtual DbSet<Guest> Guest { get; set; }
-        public virtual DbSet<HistoryGuest> HistoryGuest { get; set; }
-        public virtual DbSet<Operator> Operator { get; set; }
-        public virtual DbSet<Parametre> Parametre { get; set; }
-        public virtual DbSet<Register> Register { get; set; }
-        public virtual DbSet<RegisterNorate> RegisterNorate { get; set; }
-        public virtual DbSet<RoomState> RoomState { get; set; }
-        public virtual DbSet<RoomType> RoomType { get; set; }
-        public virtual DbSet<TRoomSign> TRoomSign { get; set; }
+        public virtual DbSet<Guest> Guests { get; set; }
+        public virtual DbSet<HistoryGuest> HistoryGuests { get; set; }
+        public virtual DbSet<Operator> Operators { get; set; }
+        public virtual DbSet<Parametre> Parametres { get; set; }
+        public virtual DbSet<Register> Registers { get; set; }
+        public virtual DbSet<RegisterNorate> RegisterNorates { get; set; }
+        public virtual DbSet<RoomState> RoomStates { get; set; }
+        public virtual DbSet<RoomType> RoomTypes { get; set; }
+        public virtual DbSet<TRoomSign> TRoomSigns { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
