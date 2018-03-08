@@ -5,7 +5,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Attrbute\**" />
+    <Compile Remove="Controllers\**" />
+    <Content Remove="Attrbute\**" />
+    <Content Remove="Controllers\**" />
+    <EmbeddedResource Remove="Attrbute\**" />
+    <EmbeddedResource Remove="Controllers\**" />
+    <None Remove="Attrbute\**" />
+    <None Remove="Controllers\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
   </ItemGroup>
 

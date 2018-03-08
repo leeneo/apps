@@ -4,7 +4,7 @@ using CcMis.Models;
 
 namespace CcMis.Data.Interfaces
 {
-    public class IBrandRepository
+    public class IOperatorRepository
     {
         Task<int> AddAsync(Brand brand);
         Task DeleteAsync(int brandID);

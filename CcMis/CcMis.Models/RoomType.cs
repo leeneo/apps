@@ -1,19 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace CcMis.Models
 {
-    public class RoomType
+    public partial class RoomType
     {
-        /// <summary>
-        ///类型编码
-        /// </summary>
-        public string s_room_type { get; set; }
-        /// <summary>
-        /// 类型名称
-        /// </summary>
-        public string vs_describe { get; set; }
+        public string SRoomType { get; set; }
+        public string VsDescribe { get; set; }
+        public string NRoomRate { get; set; }
+        public string NInRate { get; set; }
+        public string NAmount { get; set; }
+        public string DSetDate { get; set; }
+        public string SSetWorkNo { get; set; }
+        public decimal NHourPrice { get; set; }
+        public decimal? ExtraRoom { get; set; }
+        public string SBreakfast { get; set; }
+        public string SShow { get; set; }
+        public string SRent { get; set; }
     }
 }

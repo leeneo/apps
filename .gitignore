@@ -5,7 +5,11 @@
 *.jpg
 *.rar
 node_modules
-
+/packages
+/bin
+/obj
+*.dll
+.vs
 
 
 /.### OSX ###
@@ -85,3 +89,13 @@ CSharp/bin/Debug/netcoreapp2.0/CSharp.pdb
 CSharp/obj/Debug/netcoreapp2.0/CSharp.dll
 *.class
 CcMis/.vs/CcMis/v15/.suo
+/CcMis/packages
+/CcMis/.vs
+/CcMis/CcMis.API/bin
+/CcMis/CcMis.API/obj
+/CcMis/CcMis.Data/bin
+/CcMis/CcMis.Data/obj
+/CcMis/CcMis.Models/bin
+/CcMis/CcMis.Models/obj
+/CcMis/CcMis.Web/bin
+/CcMis/CcMis.Web/obj
