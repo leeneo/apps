@@ -40,9 +40,12 @@ namespace CSharp {
             // EnumTest.GreetPeople("小小",EnumTest.Language.Chinese);
             // EnumTest.GreetPeople("Mike",EnumTest.Language.English);
 
-            ObserveDesign.TestMain();
+            //ObserveDesign.TestMain();
 
-
+            ////get;set 访问器测试
+            //Student a = new Student();
+            ////a.Str = "果子";
+            //Console.WriteLine(a.Str);
 
 
 
