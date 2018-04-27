@@ -99,3 +99,6 @@ CcMis/.vs/CcMis/v15/.suo
 /CcMis/CcMis.Models/obj
 /CcMis/CcMis.Web/bin
 /CcMis/CcMis.Web/obj
+CSharp/bin/*
+CSharp/obj/*
+CSharp/obj/Debug/*
