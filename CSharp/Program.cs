@@ -42,12 +42,12 @@ namespace CSharp {
 
             //ObserveDesign.TestMain();
 
-            ////get;set 访问器测试
+            //get;set 访问器测试
             //Student a = new Student();
-            ////a.Str = "果子";
+            //a.Str = "果子";
             //Console.WriteLine(a.Str);
 
-
+            TryParse.Run();
 
 
 

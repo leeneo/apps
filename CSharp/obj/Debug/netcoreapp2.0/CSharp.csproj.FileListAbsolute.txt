@@ -41,3 +41,14 @@ G:\leeneo\MyProj\apps\CSharp\bin\Debug\netcoreapp2.0\CSharp.runtimeconfig.json
 G:\leeneo\MyProj\apps\CSharp\bin\Debug\netcoreapp2.0\CSharp.runtimeconfig.dev.json
 G:\leeneo\MyProj\apps\CSharp\bin\Debug\netcoreapp2.0\CSharp.dll
 G:\leeneo\MyProj\apps\CSharp\bin\Debug\netcoreapp2.0\CSharp.pdb
+H:\leeneo\MyProj\apps\CSharp\obj\Debug\netcoreapp2.0\CSharp.csprojResolveAssemblyReference.cache
+H:\leeneo\MyProj\apps\CSharp\obj\Debug\netcoreapp2.0\CSharp.csproj.CoreCompileInputs.cache
+H:\leeneo\MyProj\apps\CSharp\obj\Debug\netcoreapp2.0\CSharp.AssemblyInfoInputs.cache
+H:\leeneo\MyProj\apps\CSharp\obj\Debug\netcoreapp2.0\CSharp.AssemblyInfo.cs
+H:\leeneo\MyProj\apps\CSharp\obj\Debug\netcoreapp2.0\CSharp.dll
+H:\leeneo\MyProj\apps\CSharp\obj\Debug\netcoreapp2.0\CSharp.pdb
+H:\leeneo\MyProj\apps\CSharp\bin\Debug\netcoreapp2.0\CSharp.deps.json
+H:\leeneo\MyProj\apps\CSharp\bin\Debug\netcoreapp2.0\CSharp.runtimeconfig.json
+H:\leeneo\MyProj\apps\CSharp\bin\Debug\netcoreapp2.0\CSharp.runtimeconfig.dev.json
+H:\leeneo\MyProj\apps\CSharp\bin\Debug\netcoreapp2.0\CSharp.dll
+H:\leeneo\MyProj\apps\CSharp\bin\Debug\netcoreapp2.0\CSharp.pdb
