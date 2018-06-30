@@ -47,12 +47,20 @@ namespace CSharp {
             //a.Str = "果子";
             //Console.WriteLine(a.Str);
 
-            TryParse.Run();
+            //TryParse.Run();
 
+            Byte[] b = TestBytes.GetBytes("456");
+            foreach(var i in b)
+            {
+                Console.WriteLine(i);
+            }
+            Console.WriteLine("byteStr:" + TestBytes.GetByteStr("456"));
+            Console.WriteLine("str1:" + TestBytes.GetStr(b));
+            Console.WriteLine("str2:" + TestBytes.GetStr("53-54-55-"));          
 
 
             Console.WriteLine("\n"+date);
-            // Console.ReadKey ();
+            Console.ReadKey ();
 
         }
     }
