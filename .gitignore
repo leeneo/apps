@@ -102,3 +102,5 @@ CcMis/.vs/CcMis/v15/.suo
 CSharp/bin/*
 CSharp/obj/*
 CSharp/obj/Debug/*
+CSharp/obj/Debug/netcoreapp2.0/CSharp.csproj.CoreCompileInputs.cache
+.gitignore
