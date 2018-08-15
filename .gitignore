@@ -99,10 +99,5 @@ CcMis/.vs/CcMis/v15/.suo
 /CcMis/CcMis.Models/obj
 /CcMis/CcMis.Web/bin
 /CcMis/CcMis.Web/obj
-CSharp/bin/*
-CSharp/obj/*
-CSharp/obj/Debug/*
-CSharp/obj/Debug/netcoreapp2.0/CSharp.csproj.CoreCompileInputs.cache
-.gitignore
 /CSharp/obj
 /CSharp/bin
