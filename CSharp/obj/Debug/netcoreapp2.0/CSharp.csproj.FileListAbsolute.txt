@@ -8,3 +8,4 @@ H:\leeneo\MyProj\apps\CSharp\bin\Debug\netcoreapp2.0\CSharp.dll
 H:\leeneo\MyProj\apps\CSharp\bin\Debug\netcoreapp2.0\CSharp.pdb
 H:\leeneo\MyProj\apps\CSharp\obj\Debug\netcoreapp2.0\CSharp.dll
 H:\leeneo\MyProj\apps\CSharp\obj\Debug\netcoreapp2.0\CSharp.pdb
+H:\leeneo\MyProj\apps\CSharp\obj\Debug\netcoreapp2.0\CSharp.csprojAssemblyReference.cache
