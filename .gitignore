@@ -104,3 +104,5 @@ CSharp/obj/*
 CSharp/obj/Debug/*
 CSharp/obj/Debug/netcoreapp2.0/CSharp.csproj.CoreCompileInputs.cache
 .gitignore
+/CSharp/obj
+/CSharp/bin

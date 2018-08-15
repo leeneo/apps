@@ -59,8 +59,9 @@ namespace CSharp {
             // Console.WriteLine("str2:" + TestBytes.GetStr("53-54-55-"));          
 
             MethodTest mt=new MethodTest();
-            var res=mt.Usp_get_next_no("123");
+            var res=mt.Usp_get_next_no("测试");
             Console.WriteLine("\n"+res);
+
 
             Console.WriteLine("\n"+date);
             Console.ReadKey ();
