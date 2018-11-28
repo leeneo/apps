@@ -6,7 +6,7 @@ namespace CSharp {
     class Program {
 
         static void Main (string[] args) {
-            string date = DateTime.Now.ToString("yyyy/MM/dd");
+            string date = DateTime.Now.ToString ("yyyy/MM/dd");
             //JsonTest.Run();
             // Console.WriteLine ("ShortDate:" + TestDate.ShortDate ());
             // Console.WriteLine ("ShortTime:" + TestDate.ShortTime ());
@@ -20,8 +20,10 @@ namespace CSharp {
             // Console.WriteLine("DateTime.Now.ToShortDateString():" + DateTime.Now.ToShortDateString());
             // Console.WriteLine("DateTime.Now.ToLocalTime():" + DateTime.Now.ToLocalTime());
             // TryCatch.Run ();
-            // StringTest.NullTest=null;
-            // Console.WriteLine("NullTest:" + StringTest.NullTest.ToString());
+            // var st = StringTest.NullTest = null;        //right:string 可以赋值为null
+            // Console.WriteLine ("NullTest:" + st);
+            // Console.WriteLine("NullTest:" + st.ToString());  //wrong:空引用异常
+            StringTest.getTest();
 
             //object msg=StringTest.Messages="Test";
             //msg = null;
@@ -63,11 +65,11 @@ namespace CSharp {
             //var res2=mt.Usp_get_next_no("测试");
             //Console.WriteLine("\nres:"+res+",res2:"+res2);
 
-            ConcurrentQueueTest.Run();
+            // ConcurrentQueueTest.Run ();
 
             //YieldTest.Run();
 
-            Console.WriteLine("\n"+date);
+            Console.WriteLine ("\n" + date);
             Console.ReadKey ();
 
         }

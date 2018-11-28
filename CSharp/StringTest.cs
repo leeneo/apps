@@ -10,7 +10,9 @@ namespace CSharp {
 
         public static string Messages { get; set; }
         public static void getTest () {
-            Console.WriteLine ("Test");
+            decimal mon=1.026m;
+
+            Console.WriteLine (mon.ToString("#.#"));
         }
     }
 }
