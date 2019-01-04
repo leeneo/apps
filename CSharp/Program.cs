@@ -23,7 +23,7 @@ namespace CSharp {
             // var st = StringTest.NullTest = null;        //right:string 可以赋值为null
             // Console.WriteLine ("NullTest:" + st);
             // Console.WriteLine("NullTest:" + st.ToString());  //wrong:空引用异常
-            StringTest.getTest();
+            // StringTest.getTest();
 
             //object msg=StringTest.Messages="Test";
             //msg = null;
@@ -37,7 +37,9 @@ namespace CSharp {
             // LamdaExpression.LamdaTest(1,2);
 
             // DelegateTest.UseDel();
-            // DelegateTest.TestMain();
+            // DelegateTest.TestMain();       
+            
+            ActionFunc.TestMain();
 
             // EnumTest.GreetPeople("小小",EnumTest.Language.Chinese);
             // EnumTest.GreetPeople("Mike",EnumTest.Language.English);
