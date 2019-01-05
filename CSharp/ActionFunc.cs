@@ -20,11 +20,11 @@ namespace CSharp {
             System.Console.WriteLine (param1 - param2);
         }
 
-        public static int TestFunc () { 
-            Func<int, int, int> math = Add;     //指定委托对象并关联函数                        
-            return math (1, 2);                 //调用委托函数;
+        public static int TestFunc () {
+            Func<int, int, int> math = Add; //指定委托对象并关联函数                        
+            return math (1, 2); //调用委托函数;
         }
-        public static int TestFunc2 (int a, int b) { 
+        public static int TestFunc2 (int a, int b) {
             // 匿名函数：
             Func<int, int, int> math = delegate (int param1, int param2) {
                 return param1 + param2;
@@ -39,30 +39,38 @@ namespace CSharp {
             return math (a, b);
         }
         public static void TestAction () {
-            Action<int, int> math = Minus;      //指定委托对象并关联函数
-            math (2, 1);                        //调用委托函数
+            Action<int, int> math = Minus; //指定委托对象并关联函数
+            math (2, 1); //调用委托函数
         }
         public static void TestAction2 (int a, int b) {
             // 匿名函数：
             Action<int, int> math = delegate (int x, int y) {
                 System.Console.WriteLine (x - y);
             };
-            math (a, b); 
+            math (a, b);
         }
         public static void TestAction3 (int a, int b) {
             // Lambda：
             Action<int, int> math = (x, y) => {
                 System.Console.WriteLine (x - y);
             };
-            math (a, b); 
+            math (a, b);
         }
+
+        //内置委托类型还能当作属性的类型声明来用，具体使用时再赋值为同名匿名函数，类似于重写
+        public static Func<int, int, string> OnPost { get; set; }
+
         public static void TestMain () {
             System.Console.WriteLine (ActionFunc.TestFunc ());
             System.Console.WriteLine (ActionFunc.TestFunc2 (1, 2));
             System.Console.WriteLine (ActionFunc.TestFunc3 (1, 2));
+            
             ActionFunc.TestAction ();
             ActionFunc.TestAction2 (2, 1);
             ActionFunc.TestAction3 (2, 1);
+
+            OnPost = (x, y) => { return "委托还可以这样用，好强大！" + (x + y); };
+            System.Console.WriteLine (OnPost (1, 2));
         }
     }
 }
