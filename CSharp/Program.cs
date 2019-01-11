@@ -39,7 +39,7 @@ namespace CSharp {
             // DelegateTest.UseDel();
             // DelegateTest.TestMain();       
             
-            ActionFunc.TestMain();
+            // ActionFunc.TestMain();
 
             // EnumTest.GreetPeople("小小",EnumTest.Language.Chinese);
             // EnumTest.GreetPeople("Mike",EnumTest.Language.English);
@@ -70,6 +70,8 @@ namespace CSharp {
             // ConcurrentQueueTest.Run ();
 
             //YieldTest.Run();
+            
+            System.Console.WriteLine(5%2);
 
             Console.WriteLine ("\n" + date);
             Console.ReadKey ();
