@@ -8,14 +8,15 @@ namespace CSharp {
         static void Main (string[] args) {
             string date = DateTime.Now.ToString ("yyyy/MM/dd");
             //JsonTest.Run();
-            // Console.WriteLine ("ShortDate:" + TestDate.ShortDate ());
-            // Console.WriteLine ("ShortTime:" + TestDate.ShortTime ());
-            // Console.WriteLine ("LongTime:" + TestDate.LongTime ());
-            // Console.WriteLine ("LongDate:" + TestDate.LongDate ());
-            // Console.WriteLine ("LocalTime:" + TestDate.LocalTime ());
-            // Console.WriteLine ("UniversalTime:" + TestDate.UniversalTime ());
-            // Console.WriteLine ("ToString:" + TestDate.ToString ());
-            // Console.WriteLine ("Date:" + TestDate.Date ());
+            // TestDate.Datevalue=new DateTime();
+            // Console.WriteLine ("ShortDate:" + TestDate.ShortDate());
+            // Console.WriteLine ("ShortTime:" + TestDate.ShortTime());
+            // Console.WriteLine ("LongTime:" + TestDate.LongTime());
+            // Console.WriteLine ("LongDate:" + TestDate.LongDate());
+            // Console.WriteLine ("LocalTime:" + TestDate.LocalTime());
+            // Console.WriteLine ("UniversalTime:" + TestDate.UniversalTime());
+            // Console.WriteLine ("ToString:" + TestDate.ToString());
+            // Console.WriteLine ("Date:" + TestDate.Date());
             // Console.WriteLine("DateTime.Now:" + DateTime.Now);
             // Console.WriteLine("DateTime.Now.ToShortDateString():" + DateTime.Now.ToShortDateString());
             // Console.WriteLine("DateTime.Now.ToLocalTime():" + DateTime.Now.ToLocalTime());
