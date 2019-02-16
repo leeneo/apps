@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Newtonsoft.Json; //不要管红线提示，程序可以正常运行
+using Microsoft.Extensions.Logging;
 
 namespace CSharp {
     class Program {
@@ -70,8 +71,11 @@ namespace CSharp {
 
             // ConcurrentQueueTest.Run ();
 
-            //YieldTest.Run();
-            
+            //YieldTest.Run();            
+
+            // var l=new LogTest();
+            // l.Run();
+
             System.Console.WriteLine(5%2);
 
             Console.WriteLine ("\n" + date);
