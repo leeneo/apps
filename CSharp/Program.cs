@@ -75,8 +75,11 @@ namespace CSharp {
 
             // var l=new LogTest();
             // l.Run();
+            
+            //TaskTest.Run();
+            TaskTest.CreateTask();
 
-            System.Console.WriteLine(5%2);
+            //System.Console.WriteLine(5%2);  //=>1
 
             Console.WriteLine ("\n" + date);
             Console.ReadKey ();
