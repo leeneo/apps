@@ -7,17 +7,24 @@ namespace CSharp {
     class Program {
 
         static void Main (string[] args) {
-            string date = DateTime.Now.ToString ("yyyy/MM/dd");
             //JsonTest.Run();
-            // TestDate.Datevalue=new DateTime();
-            // Console.WriteLine ("ShortDate:" + TestDate.ShortDate());
-            // Console.WriteLine ("ShortTime:" + TestDate.ShortTime());
-            // Console.WriteLine ("LongTime:" + TestDate.LongTime());
-            // Console.WriteLine ("LongDate:" + TestDate.LongDate());
-            // Console.WriteLine ("LocalTime:" + TestDate.LocalTime());
-            // Console.WriteLine ("UniversalTime:" + TestDate.UniversalTime());
-            // Console.WriteLine ("ToString:" + TestDate.ToString());
-            // Console.WriteLine ("Date:" + TestDate.Date());
+            TestDate.Datevalue = DateTime.Now;
+            TestDate.NowDate();
+            TestDate.UtcNowDate();
+            TestDate.Today();
+            TestDate.GetDate();
+            TestDate.GetDay();
+            TestDate.GetDayOfWeek();
+            TestDate.GetDayOfYear();
+            TestDate.GetTimeOfDay();
+            TestDate.GetMonth();
+            TestDate.ShortDate();
+            TestDate.ShortTime();
+            TestDate.LongDate();
+            TestDate.LongTime();
+            TestDate.LocalTime();
+            TestDate.UniversalTime();
+            TestDate.ToString();
             // Console.WriteLine("DateTime.Now:" + DateTime.Now);
             // Console.WriteLine("DateTime.Now.ToShortDateString():" + DateTime.Now.ToShortDateString());
             // Console.WriteLine("DateTime.Now.ToLocalTime():" + DateTime.Now.ToLocalTime());
@@ -40,7 +47,7 @@ namespace CSharp {
 
             // DelegateTest.UseDel();
             // DelegateTest.TestMain();       
-            
+
             // ActionFunc.TestMain();
 
             // EnumTest.GreetPeople("小小",EnumTest.Language.Chinese);
@@ -75,13 +82,13 @@ namespace CSharp {
 
             // var l=new LogTest();
             // l.Run();
-            
+
             //TaskTest.Run();
-            TaskTest.CreateTask();
+            // TaskTest.CreateTask();
 
             //System.Console.WriteLine(5%2);  //=>1
 
-            Console.WriteLine ("\n" + date);
+            Console.WriteLine ("\n" + DateTime.Now.ToString("yyyy/MM/dd"));
             Console.ReadKey ();
 
         }

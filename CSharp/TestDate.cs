@@ -3,36 +3,72 @@ using System.Collections.Generic;
 
 namespace CSharp {
     class TestDate {
+        public TestDate () {
+
+        }
         public static DateTime Datevalue { get; set; }
 
-        public static string ShortDate () {
-            return Datevalue.ToShortDateString ();
+        public static void NowDate()
+        {
+            Console.WriteLine("DateTime.Now:" + DateTime.Now);
+            return;
         }
-        public static string ShortTime () {
-            return Datevalue.ToShortTimeString ();
+        public static void UtcNowDate()
+        {
+            Console.WriteLine("DateTime.UtcNow:" + DateTime.UtcNow);
+            return;
         }
-
-        public static string LongDate () {
-            return Datevalue.ToLongDateString ();
+        public static void Today()
+        {
+            Console.WriteLine("DateTime.Today:" + DateTime.Today);
+            return;
         }
-        public static string LongTime () {
-            return Datevalue.ToLongTimeString ();
+        public static void GetDate()
+        {
+            Console.WriteLine("Datevalue.Date:" + Datevalue.Date);
         }
-
-        public static DateTime LocalTime () {
-            return Datevalue.ToLocalTime ();
+        public static void GetDay()
+        {
+            Console.WriteLine("Datevalue.Day:" + Datevalue.Day);
         }
-        public static DateTime UniversalTime () {
-            return Datevalue.ToUniversalTime ();
+        public static void GetDayOfWeek()
+        {
+            Console.WriteLine("Datevalue.DayOfWeek:" + Datevalue.DayOfWeek);
         }
-
-        public new static string ToString () {
-            return Datevalue.ToString ();
+        public static void GetDayOfYear()
+        {
+            Console.WriteLine("Datevalue.DayOfYear:" + Datevalue.DayOfYear);
         }
-
-        public static DateTime Date () {
-            return Datevalue.Date;
+        public static void GetTimeOfDay()
+        {
+            Console.WriteLine("Datevalue.TimeOfDay:" + Datevalue.TimeOfDay);
         }
-
+        public static void GetMonth()
+        {
+            Console.WriteLine("Datevalue.Month:" + Datevalue.Month);
+        }
+        public static void ShortDate()
+        {
+            Console.WriteLine("ToShortDateString():" + Datevalue.ToShortDateString());
+            return;
+        }
+        public static void ShortTime () {
+            Console.WriteLine("ToShortTimeString():" + Datevalue.ToShortTimeString());
+        }
+        public static void LongDate () {
+            Console.WriteLine("ToLongDateString():" + Datevalue.ToLongDateString());
+        }
+        public static void LongTime () {
+            Console.WriteLine("ToLongTimeString():" + Datevalue.ToLongTimeString());
+        }
+        public static void LocalTime () {
+            Console.WriteLine("ToLocalTime():" + Datevalue.ToLocalTime());
+        }
+        public static void UniversalTime () {
+            Console.WriteLine("ToUniversalTime():" + Datevalue.ToUniversalTime());
+        }
+        public new static void ToString () {
+            Console.WriteLine("ToString():" + Datevalue.ToString());
+        }
     }
 }
