@@ -9,22 +9,22 @@ namespace CSharp {
         static void Main (string[] args) {
             //JsonTest.Run();
             TestDate.Datevalue = DateTime.Now;
-            TestDate.NowDate();
-            TestDate.UtcNowDate();
-            TestDate.Today();
-            TestDate.GetDate();
-            TestDate.GetDay();
-            TestDate.GetDayOfWeek();
-            TestDate.GetDayOfYear();
-            TestDate.GetTimeOfDay();
-            TestDate.GetMonth();
-            TestDate.ShortDate();
-            TestDate.ShortTime();
-            TestDate.LongDate();
-            TestDate.LongTime();
-            TestDate.LocalTime();
-            TestDate.UniversalTime();
-            TestDate.ToString();
+            TestDate.NowDate ();
+            TestDate.UtcNowDate ();
+            TestDate.Today ();
+            TestDate.GetDate ();
+            TestDate.GetDay ();
+            TestDate.GetDayOfWeek ();
+            TestDate.GetDayOfYear ();
+            TestDate.GetTimeOfDay ();
+            TestDate.GetMonth ();
+            TestDate.ShortDate ();
+            TestDate.ShortTime ();
+            TestDate.LongDate ();
+            TestDate.LongTime ();
+            TestDate.LocalTime ();
+            TestDate.UniversalTime ();
+            TestDate.ToString ();
             // Console.WriteLine("DateTime.Now:" + DateTime.Now);
             // Console.WriteLine("DateTime.Now.ToShortDateString():" + DateTime.Now.ToShortDateString());
             // Console.WriteLine("DateTime.Now.ToLocalTime():" + DateTime.Now.ToLocalTime());
@@ -88,7 +88,19 @@ namespace CSharp {
 
             //System.Console.WriteLine(5%2);  //=>1
 
-            Console.WriteLine ("\n" + DateTime.Now.ToString("yyyy/MM/dd"));
+            var b=new B();
+            b.Hello();
+            var bs=new B("小明","书");
+
+            // var absb=new AbsB();
+            // absb.Hello();
+            // var absb2=new AbsB("小明","书");
+
+            // var absa=new AbsA(); //报错：无法创建该类实例，抽象类不能被实例化
+
+            // var c=new B.C();     //报错：访问级别不够，由此可见内部类与成员的默认访问级别一致为private
+
+            Console.WriteLine ("\n" + DateTime.Now.ToString ("yyyy/MM/dd"));
             Console.ReadKey ();
 
         }
