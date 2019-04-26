@@ -88,9 +88,9 @@ namespace CSharp {
 
             //System.Console.WriteLine(5%2);  //=>1
 
-            var b=new B();
-            b.Hello();
-            var bs=new B("小明","书");
+            // var b=new B();
+            // b.Hello();
+            // var bs=new B("小明","书");
 
             // var absb=new AbsB();
             // absb.Hello();
@@ -99,6 +99,16 @@ namespace CSharp {
             // var absa=new AbsA(); //报错：无法创建该类实例，抽象类不能被实例化
 
             // var c=new B.C();     //报错：访问级别不够，由此可见内部类与成员的默认访问级别一致为private
+
+            double[] nums = {  2, 0, 9, 6, 4.2, 5.8 ,0.2 };
+            Bubble.Tolower (nums);
+            var temp = "";
+            foreach (var i in nums) {
+                temp += i + ",";
+            }
+            temp = temp.Remove (temp.Length - 1, 1);
+            Console.WriteLine ("{" + temp + "}");
+            // Console.WriteLine(Bubble.Comp(22,4));
 
             Console.WriteLine ("\n" + DateTime.Now.ToString ("yyyy/MM/dd"));
             Console.ReadKey ();
