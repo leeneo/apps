@@ -70,5 +70,8 @@ namespace CSharp {
         public new static void ToString () {
             Console.WriteLine("ToString():" + Datevalue.ToString());
         }
+        public static void ToString (string str) {
+            Console.WriteLine("ToString():" + Datevalue.ToString(str));
+        }
     }
 }

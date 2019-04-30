@@ -25,6 +25,8 @@ namespace CSharp {
             TestDate.LocalTime ();
             TestDate.UniversalTime ();
             TestDate.ToString ();
+            TestDate.ToString ("yyyyMMddHHmmss");
+
             // Console.WriteLine("DateTime.Now:" + DateTime.Now);
             // Console.WriteLine("DateTime.Now.ToShortDateString():" + DateTime.Now.ToShortDateString());
             // Console.WriteLine("DateTime.Now.ToLocalTime():" + DateTime.Now.ToLocalTime());
@@ -100,7 +102,7 @@ namespace CSharp {
 
             // var c=new B.C();     //报错：访问级别不够，由此可见内部类与成员的默认访问级别一致为private
 
-            double[] nums = {  2, 0, 9, 6, 4.2, 5.8 ,0.2 };
+            double[] nums = { 2, 0, 9, 6, 4.2, 5.8, 0.2 };
             Bubble.Tolower (nums);
             var temp = "";
             foreach (var i in nums) {
