@@ -1,0 +1,82 @@
+// @import url("../../../node_modules/bootstrap/dist/css/bootstrap.min.css");
+// @import url('https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css');
+@import url('../../assets/bootstrap/css/bootstrap.min.css');
+
+.login {
+    height: 112%;
+    overflow-y: scroll;
+    background: oldlace;
+    transition: all .5s ease;
+    --webkit-transition: all .5s ease;
+    --moz-transition: all .5s ease;
+}
+
+.container {
+    width: 100%;
+    height: 56rem;
+    padding: 15px;
+    padding-top: 4rem;
+    overflow: hidden;
+}
+
+.logoWrap {
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+    width: 200px;
+}
+
+.logo {
+    display: inline-block;
+    border-radius: 50%; 
+    /*background: url('../../wwwroot/img/logo.jpg') center no-repeat;*/
+    background-image: url('src/assets/img/logo.jpg');
+    background-size: contain;
+    width: 100px;
+    height: 100px;
+    background-color: #a2c037;
+}
+
+.ne-sub {
+    position: relative;
+}
+
+    .ne-sub i {
+        font-style: normal;
+        transform: rotate(360deg);
+        position: absolute;
+        top: 6px;
+        background: url('src/assets/img/btnLoop.png') center no-repeat;
+        background-size: contain;
+        float: right;
+        height: 20px;
+        width: 20px;
+        content: '';
+        right: 8px;
+        animation: rollBtn linear .6s infinite;
+        -webkit-animation: rollBtn linear .6s infinite;
+        -moz-animation: rollBtn linear .6s infinite;
+        display: none;
+        color: #fff;
+    }
+
+    .btn-default{
+        position: relative;
+        color: #333;
+        background-color: #fff;
+        border-color: #ccc;
+    }
+
+@keyframes rollBtn {
+    0% {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+    }
+}

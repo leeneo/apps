@@ -1,0 +1,73 @@
+/*
+* Author:Neo 
+* Contact:leeneo@xingzhihen.com
+* Site:xingzhihen.com
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+i{
+    font-style: normal;
+}
+b{
+    font-weight: 400
+}
+q{
+    quotes: none;
+}
+
+.ne-hAlign {
+    margin: 0 auto;
+    text-align: center;
+}
+.panTit {
+    background: #dff0d8;
+    font-size: 1.6rem;
+    color: #333;
+    text-align: center;
+    height: 3rem;
+    line-height: 3rem;
+}
+/* 按钮样式 */
+
+.neo-btnWrap {
+    padding: 18px 10px;
+    margin-bottom: 18px;
+}
+
+.neo-btn {
+    padding: 8px 16px;
+    padding: 5px 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: 0;
+    border: 0;
+}
+
+.neo-lgBtn {
+    padding: .4rem 1.2rem;
+}
+
+.neo-btn-block {
+    width: 100%
+}
+
+.neo-btn-shadow {
+    color: #fff;
+    background-color: rgba(69, 140, 203, 0) !important; /*透明效果*/
+    background-color: rgb(127, 198, 223) !important; /*小清新蓝效果*/
+    border-color: rgba(69, 140, 203, 0) !important;
+    border-radius: 4px !important;
+    box-shadow: 0 0 4px 0 rgba(6, 42, 74, .56) !important;
+    font-size: 16px
+}
+
+.neo-btn-halfCircle {
+    border-radius: 66px;
+}
+
