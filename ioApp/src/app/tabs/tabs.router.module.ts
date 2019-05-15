@@ -35,6 +35,15 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'test',
+        children: [
+          {
+            path: '',
+            loadChildren: '../test/test.module#TestPageModule'
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
