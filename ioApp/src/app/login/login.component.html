@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <title>微信报表</title>
+  <link href="../../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../../wwwroot/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../../wwwroot/neoui/css/utils.min.css" rel="stylesheet" />
+  <style>
+      html, body {
+          height: 112%;
+          overflow-y: scroll;
+          background: oldlace;
+          transition: all .5s ease;
+          --webkit-transition: all .5s ease;
+          --moz-transition: all .5s ease;
+      }
+
+      .container {
+          width: 100%;
+          height: 56rem;
+          padding: 15px;
+          padding-top: 4rem;
+          overflow: hidden;
+      }
+
+      .logoWrap {
+          margin: 0 auto;
+          text-align: center;
+          overflow: hidden;
+          width: 200px;
+      }
+
+      .logo {
+          display: inline-block;
+          border-radius: 50%; /*background: url('../../wwwroot/img/logo.jpg') center no-repeat;*/
+          background-image: url('../../wwwroot/img/logo.jpg');
+          background-size: contain;
+          width: 100px;
+          height: 100px;
+          background-color: #a2c037;
+      }
+
+      .ne-sub {
+          position: relative;
+      }
+
+          .ne-sub i {
+              font-style: normal;
+              transform: rotate(360deg);
+              position: absolute;
+              top: 6px;
+              background: url('../../wwwroot/img/btnLoop.png') center no-repeat;
+              background-size: contain;
+              float: right;
+              height: 20px;
+              width: 20px;
+              content: '';
+              right: 8px;
+              animation: rollBtn linear .6s infinite;
+              -webkit-animation: rollBtn linear .6s infinite;
+              -moz-animation: rollBtn linear .6s infinite;
+              display: none;
+              color: #fff;
+          }
+
+      @@keyframes rollBtn {
+          0% {
+              transform: rotate(0deg);
+              -webkit-transform: rotate(0deg);
+              -moz-transform: rotate(0deg);
+          }
+
+          100% {
+              transform: rotate(360deg);
+              -webkit-transform: rotate(360deg);
+              -moz-transform: rotate(360deg);
+          }
+      }
+  </style>
+</head>
+<body>
+  <div class="container">
+      <div id="logoWrap" class="logoWrap">
+          <div class="logo"></div>
+          <div class="title">
+              <h2>微信报表</h2>
+          </div>
+      </div>
+      <form>
+          <div class="form-group has-error">
+              <span id="helpBlock" class="help-block padding-left-2px"></span>
+          </div>
+
+          <div class="form-group">
+              <label for="ne-userInp">用户名</label>
+              <input type="email" class="form-control" id="ne-userInp" placeholder="用户名" value="">
+          </div>
+          <div class="form-group">
+              <label for="ne-pwdInp">密码</label>
+              <input type="password" class="form-control" id="ne-pwdInp" placeholder="密码" value="">
+          </div>
+          <button type="button" class="btn btn-default ne-sub">登录<i></i></button>
+      </form>
+  </div>
+  <script src="../../wwwroot/neoui/js/jquery.min.js"></script>
+  <script src="../../wwwroot/bootstrap/js/bootstrap.min.js"></script>
+  <script>
+      $(function () {
+
+          // 解决输入法遮挡
+          $('#ne-pwdInp').click(function () {
+              document.body.scrollTop = 169;
+              window.scrollTop = 169;
+              $('body').scrollTop(200);
+              $(window).scrollTop(200);
+          })
+
+          var $subtn = $('.ne-sub');
+          $subtn.click(function () {
+              document.body.scrollTop = 0;
+              window.scrollTop = 0;
+
+              var $nUser = $('#ne-userInp');
+              var $nPwd = $('#ne-pwdInp');
+              var $hpbk = $('#helpBlock');
+              var usertxt = $nUser.val().trim();
+              var pwdtxt = $nPwd.val().trim();
+              if (usertxt == '' || pwdtxt == '') {
+                  $hpbk.fadeOut();
+                  $hpbk.parent().addClass('has-error');
+                  $hpbk.text('用户名或密码不能为空，请重新输入');
+                  $hpbk.fadeIn();
+
+              } else {
+                  $subtn.text("登录中").append(' <i></i>');
+                  $subtn.children().show();
+                  $.post('/Hotel/Report/LoginSubmit?' + 'account=' + usertxt + '&pwd=' + pwdtxt, function (e) {
+                      if (e.success) {
+                          $hpbk.fadeOut();
+                          $subtn.text(e.msg);
+                          location.href = "/Hotel/RoomState/RealRoomState";
+                      } else{
+                          $hpbk.fadeOut();
+                          $hpbk.parent().addClass('has-error');
+                          $hpbk.text(e.msg);
+                          $hpbk.fadeIn();
+                          $subtn.text("登录");
+                      }
+                  });
+
+              }
+
+          });
+
+          $(document).keydown(function (event) {
+              if (event.keyCode == "13") {//keyCode=13是回车键
+                  $('.ne-sub').click();
+              }
+          });
+      })
+  </script>
+</body>
+
+</html>
