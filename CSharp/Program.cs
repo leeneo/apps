@@ -8,24 +8,10 @@ namespace CSharp {
 
         static void Main (string[] args) {
             //JsonTest.Run();
-            TestDate.Datevalue = DateTime.Now;
-            TestDate.NowDate ();
-            TestDate.UtcNowDate ();
-            TestDate.Today ();
-            TestDate.GetDate ();
-            TestDate.GetDay ();
-            TestDate.GetDayOfWeek ();
-            TestDate.GetDayOfYear ();
-            TestDate.GetTimeOfDay ();
-            TestDate.GetMonth ();
-            TestDate.ShortDate ();
-            TestDate.ShortTime ();
-            TestDate.LongDate ();
-            TestDate.LongTime ();
-            TestDate.LocalTime ();
-            TestDate.UniversalTime ();
-            TestDate.ToString ();
-            TestDate.ToString ("yyyyMMddHHmmss");
+            // TestDate.OutPut();
+
+            //字符串格式化输出--返回格式化字符串
+            StringFormat.OutPut ();
 
             // Console.WriteLine("DateTime.Now:" + DateTime.Now);
             // Console.WriteLine("DateTime.Now.ToShortDateString():" + DateTime.Now.ToShortDateString());
@@ -102,15 +88,7 @@ namespace CSharp {
 
             // var c=new B.C();     //报错：访问级别不够，由此可见内部类与成员的默认访问级别一致为private
 
-            double[] nums = { 2, 0, 9, 6, 4.2, 5.8, 0.2 };
-            Bubble.Tolower (nums);
-            var temp = "";
-            foreach (var i in nums) {
-                temp += i + ",";
-            }
-            temp = temp.Remove (temp.Length - 1, 1);
-            Console.WriteLine ("{" + temp + "}");
-            // Console.WriteLine(Bubble.Comp(22,4));
+            // BubbleTest.Tolower();
 
             Console.WriteLine ("\n" + DateTime.Now.ToString ("yyyy/MM/dd"));
             Console.ReadKey ();
