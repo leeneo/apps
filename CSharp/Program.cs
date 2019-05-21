@@ -11,7 +11,7 @@ namespace CSharp {
             // TestDate.OutPut();
 
             //字符串格式化输出--返回格式化字符串
-            StringFormat.OutPut ();
+            // StringFormat.OutPut ();
 
             // Console.WriteLine("DateTime.Now:" + DateTime.Now);
             // Console.WriteLine("DateTime.Now.ToShortDateString():" + DateTime.Now.ToShortDateString());
@@ -89,6 +89,8 @@ namespace CSharp {
             // var c=new B.C();     //报错：访问级别不够，由此可见内部类与成员的默认访问级别一致为private
 
             // BubbleTest.Tolower();
+
+            ContainsTest.Opt();
 
             Console.WriteLine ("\n" + DateTime.Now.ToString ("yyyy/MM/dd"));
             Console.ReadKey ();
