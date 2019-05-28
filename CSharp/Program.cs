@@ -92,8 +92,9 @@ namespace CSharp {
 
             // ContainsTest.Opt();
 
-            EqualsTest.Opt();
-
+            // EqualsTest.Opt();
+            GetAscii.Opt ();
+            
             Console.WriteLine ("\n" + DateTime.Now.ToString ("yyyy/MM/dd"));
             Console.ReadKey ();
 
