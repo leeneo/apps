@@ -90,7 +90,9 @@ namespace CSharp {
 
             // BubbleTest.Tolower();
 
-            ContainsTest.Opt();
+            // ContainsTest.Opt();
+
+            EqualsTest.Opt();
 
             Console.WriteLine ("\n" + DateTime.Now.ToString ("yyyy/MM/dd"));
             Console.ReadKey ();
