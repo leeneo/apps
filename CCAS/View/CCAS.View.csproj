@@ -1,0 +1,64 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="bin\**" />
+    <Compile Remove="wwwroot\Attachs\**" />
+    <Compile Remove="wwwroot\fonts\fonts\**" />
+    <Content Remove="bin\**" />
+    <Content Remove="wwwroot\Attachs\**" />
+    <Content Remove="wwwroot\fonts\fonts\**" />
+    <EmbeddedResource Remove="bin\**" />
+    <EmbeddedResource Remove="wwwroot\Attachs\**" />
+    <EmbeddedResource Remove="wwwroot\fonts\fonts\**" />
+    <None Remove="bin\**" />
+    <None Remove="wwwroot\Attachs\**" />
+    <None Remove="wwwroot\fonts\fonts\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\TestProviderController.cs" />
+    <Compile Remove="Models\LoggerProvider.cs" />
+    <Compile Remove="Models\WxMenus.cs" />
+    <Compile Remove="Utils\Constant.cs" />
+    <Compile Remove="Utils\CookieHelper.cs" />
+    <Compile Remove="Utils\CookieOperate.cs" />
+    <Compile Remove="Utils\DESEncrypt.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="bundleconfig.json" />
+    <Content Remove="wwwroot\nlog.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="nlog" Version="4.6.6" />
+    <PackageReference Include="Senparc.Weixin.MP" Version="16.7.10" />
+    <PackageReference Include="Senparc.Weixin.MP.MVC" Version="7.2.14" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="4.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bundleconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Model\CCAS.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Nlog.config">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\css\bootstrap.min.css">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JSONSchema="" /></VisualStudio></ProjectExtensions>
+
+</Project>
