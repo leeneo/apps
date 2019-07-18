@@ -21,15 +21,7 @@ namespace CCAS.Utils
         {
             get
             {
-                //if (DateTime.Now.Hour < 23 && HttpContext.Current != null && HttpContext.Current.Application["token"] != null)
-                //    return HttpContext.Current.Application["token"].ToString();
-                //string key = DateTime.Now.ToString("yyyy#MM#dd");
-                //string vcName = ConfigurationManager.AppSettings["vcName"];
-                //string token = Encryption.AESEncrypt(vcName, key);
-                ////_Logger.Info("ApiClient", "提交token：" + token);
-                //if (HttpContext.Current != null)
-                //    HttpContext.Current.Application["token"] = token;
-                //return token;
+        
                 return "";
             }
         }
