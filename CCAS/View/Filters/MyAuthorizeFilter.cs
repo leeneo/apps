@@ -11,7 +11,7 @@ namespace CCAS.Filters
             HttpCookie cookieAccount = new HttpCookie();
             cookieAccount.Value = httpContext.Request.Cookies["contactId"];
             if (cookieAccount.Value == null)
-                context.HttpContext.Response.Redirect("/Home/CustomerLogin");
+                context.HttpContext.Response.Redirect("/Home/Login");
         }
         //public async Task OnAuthorizationAsync(AuthorizationFilterContext context)
         //{
