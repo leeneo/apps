@@ -1,4 +1,4 @@
-#include "stdio.h"
+ #include "stdio.h"
 
 int main()
 {
@@ -15,6 +15,6 @@ int main()
                                 l++;
                     printf("%d%d%d\n", i, j, k);
 }
-    printf("¹²%d¸ö\n",l);
+    printf("l=%d\n",l);
     return 0;
 }

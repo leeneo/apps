@@ -15,6 +15,6 @@ int main()
                                 l++;
                     printf("%d%d%d\n", i, j, k);
 }
-    printf("¹²%d¸ö\n",l);
+    printf("?%d?\n",l);
     return 0;
 }
