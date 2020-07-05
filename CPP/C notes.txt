@@ -1,6 +1,9 @@
 gcc 编译命令
 
 编译：gcc x.c -o x
-执行：x.exe
+
+执行：
+cmd:x.exe | x
+powershell:.\x.exe | .\x
 
 *源文件需用中文字符集（GBK，GB2312）保存，否则输出中文乱码

@@ -3,6 +3,18 @@ using System.Collections.Generic;
 using Newtonsoft.Json; //不要管红线提示，程序可以正常运行
 using Microsoft.Extensions.Logging;
 
+/*
+   运行调试本程序，直接在项目根目录下
+   使用：
+        dotnet build
+        dotnet run 
+   如果不行，先执行：
+        dotnet restore
+   再执行：
+        dotnet build
+        dotnet run 
+*/
+
 namespace CSharp {
     class Program {
 
@@ -95,6 +107,8 @@ namespace CSharp {
             // EqualsTest.Opt();
             GetAscii.Opt ();
             
+            // Demo.Opt("");
+
             Console.WriteLine ("\n" + DateTime.Now.ToString ("yyyy/MM/dd"));
             Console.ReadKey ();
 

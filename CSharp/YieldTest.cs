@@ -42,7 +42,7 @@ namespace CSharp {
                 }
             }
             yield break;
-            Console.WriteLine ("这里的代码不执行");
+            //Console.WriteLine ("这里的代码不执行");
         }
         /// <summary>
         /// 获取数据
