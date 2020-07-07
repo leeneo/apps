@@ -13,7 +13,7 @@ int main()
                 {
                 }
                 l++;
-                printf("%d%d%d\n", i, j, k);
+                printf("%d %d %d\n", i, j, k);
             }
     printf("l=%d\n", l);
     return 0;

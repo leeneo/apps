@@ -1,11 +1,42 @@
 #include "stdio.h"
+#include "stdlib.h"
 #include "math.h"
-#include <stdbool.h>
+#include "stdbool.h"
+#include "conio.h"
 
+int i=99;
 //
-int test()
+int Test()
 {
-    printf("%d", (15 / 10));
+    int i = 9;
+    printf("i=%d\n", i);
+    return 0;
+}
+
+//全局变量作用域
+int Test2()
+{
+    printf("i=%d\n", i);
+    return 0;
+}
+
+//常用系统函数
+int CommonSystemFun()
+{
+    int i;
+    double x;
+
+    printf("请输入一个自然数：\n");
+
+    scanf("%d", &i);
+    printf("%d 的平方根是：%lf \n", i, sqrt(i));
+    printf("%d 的绝对值是：%d \n", i, abs(i));
+
+    printf("请输入一个分数：\n");
+    scanf("%lf", &x);
+    printf("%lf 的平方根是：%lf \n", x, sqrt(x));
+    printf("%lf 的绝对值是：%lf \n", x, fabs(x));
+
     return 0;
 }
 
@@ -13,7 +44,7 @@ int test()
 // 有30个人，其中有男人、女人和小孩，在一家饭馆吃饭共花了50先令；
 // 每个男人花3先令，每个女人花2先令，每个小孩花1先令；
 // 问男人、女人和小孩的人数分别为多少？
-int equation()
+int Equation()
 {
     int allPeople, allMoney, men, wonmen, children;
     allPeople = 30;
@@ -37,7 +68,7 @@ int equation()
 }
 
 //九九乘法表
-int multiplication()
+int Multiplication()
 {
     int i, j;
     for (i = 1; i < 10; i++)
@@ -56,7 +87,7 @@ int multiplication()
 }
 
 //求素数（质数）：质数是指在大于1的自然数中，除了1和它本身以外不能再被其他自然数整除的数，否则叫合数。
-int prime()
+int IsPrime()
 {
 
     int num, i;
@@ -86,7 +117,7 @@ int prime()
     return 0;
 }
 //求素数（质数）：质数是指在大于1的自然数中，除了1和它本身以外不能再被其他自然数整除的数，否则叫合数。
-int prime2()
+int IsPrime2()
 {
 
     int num, i;
@@ -96,7 +127,7 @@ int prime2()
 
     for (i = 2; i < num; i++)
     {
-        if (num % i == 0)
+        if (0 == num % i)
             break;
     }
     if (i == num)
@@ -110,9 +141,46 @@ int prime2()
 
     return 0;
 }
+//素数判断
+bool IsPrimeCore(int num)
+{
+
+    int i;
+
+    for (i = 2; i < num; i++)
+    {
+        if (0 == num % i)
+            break;
+    }
+    if (i == num)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+//求1到输入的数之间所有的素数，包括输入数
+int LotOfPrime()
+{
+    int num;
+
+    printf("请输入一个大于1的正整数：");
+
+    scanf("%d", &num);
+
+    for (int i = 2; i <= num; i++)
+    {
+        if (IsPrimeCore(i))
+            printf("素数：%d \n", i);
+    }
+
+    return 0;
+}
 
 //输出格式符
-int printFormat()
+int PrintFormat()
 {
     int num = 10002;
     printf("a=%d, ", num);
@@ -123,7 +191,7 @@ int printFormat()
 }
 
 //计算输入的正整数的位数
-int comDigit()
+int ComDigit()
 {
     int input, output;
     output = 0;
@@ -142,7 +210,7 @@ int comDigit()
 }
 
 // 求能被3整除且个位数为6的五位数有多少个
-int fiveDigit()
+int FiveDigit()
 {
     int number = 1000, count = 0;
     while (number <= 9999)
@@ -162,12 +230,20 @@ int fiveDigit()
 int main()
 {
     int res = 0;
-    // res = comDigit();
-    // res = fiveDigit();
-    // res = printFormat();
-    // res = prime();
-    // res = multiplication();
-    res = equation();
+    // res = ComDigit();
+    // res = FiveDigit();
+    // res = PrintFormat();
+    // res = IsPrime();
+    // res = Multiplication();
+    // res = Equation();
+    // res = LotOfPrime();
+    // res = CommonSystemFun();
+
+    res = Test();
+    res = Test2();
+
+    // system("pause"); //请按任意键继续
+    // getch();         //暂停不退出
 
     if (res == 0)
         return 0;

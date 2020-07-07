@@ -13,8 +13,8 @@ int main()
                 {   
                 }
                                 l++;
-                    printf("%d%d%d\n", i, j, k);
+                    printf("%d %d %d\n", i, j, k);
 }
-    printf("?%d?\n",l);
+    printf("%d\n",l);
     return 0;
 }
