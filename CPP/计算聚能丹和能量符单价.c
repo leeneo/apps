@@ -44,13 +44,21 @@ void comDigit()
 
 int main()
 {
-    comDigit();
+    for (int i = 0; i < 100; i++)
+    {
+        comDigit();
+
+        printf("\n");
+
+        system("pause");
+
+        printf("\n\n");
+
+        // getch();
+    }
 
     printf("\n\n\n\n       *******************×÷Õß£ºLeeneo*******************\n");
     printf("*******************ÓÊÏä£ºleeneo@xingzhihen.com*******************\n");
-
-    system("pause");
-    // getch();
 
     return 0;
 }

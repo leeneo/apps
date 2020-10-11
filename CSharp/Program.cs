@@ -104,13 +104,14 @@ namespace CSharp {
 
             // ContainsTest.Opt();
 
-            // EqualsTest.Opt();
-            GetAscii.Opt ();
+            EqualsTest.Opt();
+            // GetAscii.Opt ();
             
             // Demo.Opt("");
 
             Console.WriteLine ("\n" + DateTime.Now.ToString ("yyyy/MM/dd"));
             Console.ReadKey ();
+            // Console.Read();
 
         }
     }

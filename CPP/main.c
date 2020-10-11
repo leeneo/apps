@@ -4,19 +4,51 @@
 #include "stdbool.h"
 #include "conio.h"
 
-int i=99;
 //
 int Test()
 {
-    int i = 9;
-    printf("i=%d\n", i);
+    // int i = 9;
+    // printf("i=%d\n", i);
     return 0;
 }
 
-//全局变量作用域
+//a,b值互换函数
 int Test2()
 {
+    int *p;
+    int i = 10;
+    p = &i;
     printf("i=%d\n", i);
+    printf("p=%d\n", p);
+    printf("*p=%d\n\n", *p);
+
+    return 0;
+}
+
+//指针：“&”--取地址符；“*”--声明指针变量
+int PointerAddress()
+{
+    int *p;
+    int i = 10;
+    p = &i;
+    printf("i=%d\n", i);
+    printf("p=%d\n", p);
+    printf("*p=%d\n\n", *p);
+
+    i++;
+
+    printf("i=%d\n", i);
+    printf("p=%d\n", p);
+    printf("*p=%d\n", *p);
+
+    return 0;
+}
+
+int gVariable = 99;
+//全局变量作用域
+int GlobalVariable()
+{
+    printf("gVariable=%d\n", gVariable);
     return 0;
 }
 
@@ -230,14 +262,8 @@ int FiveDigit()
 int main()
 {
     int res = 0;
-    // res = ComDigit();
-    // res = FiveDigit();
-    // res = PrintFormat();
-    // res = IsPrime();
-    // res = Multiplication();
-    // res = Equation();
-    // res = LotOfPrime();
-    // res = CommonSystemFun();
+
+    // res = PointerAddress();
 
     res = Test();
     res = Test2();
