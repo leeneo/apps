@@ -14,5 +14,7 @@ namespace CCAS.Models
         public string islogon { get; set; }
         public string WeChatID { get; set; }
         public string WeChatName { get; set; }
+        public string WorkNo { get; set; }
+        public string IsActive { get; set; }
     }
 }

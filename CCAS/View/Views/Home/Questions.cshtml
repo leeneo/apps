@@ -1,0 +1,298 @@
+﻿@{
+    Layout = null;
+}
+@model List<CCAS.VModels.Project>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0, user-scalable=no">
+    <title>@ViewBag.CName</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+    <style>
+        td {
+            text-align: center;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            padding: 8px 0px !important;
+            vertical-align: middle !important;
+        }
+
+        th {
+            text-align: center;
+            border-top: none !important;
+            vertical-align: middle !important;
+        }
+
+        fieldset {
+            margin: 0 2px;
+            border: 1px solid silver;
+            border-radius: 4px;
+            padding: .35em .625em .75em;
+        }
+
+        legend {
+            border: 0;
+            width: auto;
+            font-size: 15px;
+            margin-bottom: 0px;
+        }
+
+        nav {
+            border: none !important;
+            margin-bottom: 0px !important;
+            background-color: #286090 !important;
+        }
+
+            nav a {
+                color: white !important;
+            }
+
+        .backtotop {
+            display: none;
+            position: fixed;
+            right: 5px;
+            bottom: 48px;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            background-color: white;
+            border: 1px solid cadetblue;
+            border-radius: 4px;
+            box-shadow: 0px 0px 7px cadetblue;
+        }
+
+        .modal-footer {
+            overflow: hidden;
+            padding: 1rem .6rem;
+        }
+
+        .backtotop i {
+            margin-top: 14px;
+            font-size: 18px;
+            color: cadetblue;
+        }
+
+        .badge {
+            padding: .3rem .4rem;
+            float: left;
+            margin-right: .1rem;
+        }
+        .badge:last-child{
+            float:right;
+            margin-right:0;
+        }
+        .imgWrap {
+            position: fixed;
+            z-index: 9999;
+            bottom: 0;
+            width: 100%;
+            border: 6px solid rgba(214, 220, 224, 0.99);
+            display:none;
+        }
+        .imgWrap img{
+            max-width:100%;
+            position:relative;
+        }
+            .imgWrap .colseSpn {
+                position: absolute;
+                right: -16px;
+                top: -24px;
+                padding: 6px 10px;
+                font-size: 14px;
+                color: #ff7702;
+            }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <i class="fa fa-th-list"></i>&nbsp;问题列表
+                </a>
+                <a class="navbar-brand" style="font-size:14px;float:right;" href="/Home/Index?txtName=@ViewBag.CID">
+                    <i class="fa fa-plus-circle"></i>&nbsp;新增问题
+                </a>
+            </div>
+        </div>
+    </nav>
+    <table id="box" style="table-layout: fixed;z-index:99" class="table table-striped">
+        <tr>
+            <th style="width:12%">系统</th>
+            <th style="width:60%;">问题描述</th>
+            <th>日期</th>
+        </tr>
+        @*@foreach (var item in Model)
+        {
+            var color = "";
+            if (item.IsFinish.ToLower() == "y")
+            {
+                color = "success";
+            }
+            <tr class="@color" data-st="@item.Status" data-user="@item.Created_user" data-sl="@item.Resultion" data-no="@item.ProjectNo">
+                <td>@item.System</td>
+                <td>@item.Describe</td>
+                <td>@item.Created_Date.Value.ToString("yyyy/MM/dd")</td>
+            </tr>
+        }*@
+    </table>
+    @*@if (Model.Count >= 25)
+    {
+        <button id="btn-loadmore" class="btn btn-info" style="width:98%;margin:10px 1%;outline:none;" onclick="loadmore(this);" data-index="1">加载更多</button>
+    }*@
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" style="font-weight:bold;">问题详情</h4>
+                </div>
+                <div class="modal-body" style="padding:8px;">
+                    <fieldset style="border-color:#d9534f;">
+                        <legend style="color:#d9534f;">
+                            <i class="fa fa-question-circle"></i>&nbsp;问题描述
+                        </legend>
+                        <div id="modal-cotent">
+                            暂无数据.
+                        </div>
+                    </fieldset>
+                    <br />
+                    <fieldset style="display:none;border-color:#5cb85c;">
+                        <legend style="color:#5cb85c;"><i class="fa fa-info-circle"></i>&nbsp;解决方案</legend>
+                        <span id="model-resultion"></span>
+                    </fieldset>
+                </div>
+                <div class="modal-footer">
+                    <div style="overflow:hidden;">
+                        <span class="badge" style="background-color:lightseagreen">
+                            <i class="fa fa-tag"></i>&nbsp;<span id="modal-status"></span>
+                        </span>
+                        <span class="badge" style="background-color:#f0ad4e;">
+                            <i class="fa fa-user-circle"></i>&nbsp;<span id="modal-user"></span>
+                        </span>
+                        <span class="badge" style="background-color:cadetblue;">
+                            <i class="fa fa-calendar"></i>&nbsp;<span id="modal-date"></span>
+                        </span>
+                        <span class="badge" style="">
+                            <i class="fa fa-star"></i>&nbsp;<span id="modal-no"></span>
+                        </span>
+                        <span class="badge" style="background: #fff;" id="imgSpn">
+                            <i class="glyphicon glyphicon-folder-open" style="font-size:10px;color:#ecaf40;"></i>&nbsp; <a href="javascript:void(0)" id="openImg" style="border-bottom:1px solid;font-size:12px;font-weight:100;">附件</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="backtotop" onclick="$('html,body').animate({scrollTop: '0px'}, 500);">
+        <i class="fa fa-chevron-up"></i>
+    </div>
+    <div class="img-responsive imgWrap">
+        <img id="imgShow" src="" />
+        <span class="colseSpn glyphicon glyphicon-remove" id="colseSpn"></span>
+    </div>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $('tr').click(function () {
+                trClick(this);
+            });
+            $('#myModal').on('show.bs.modal', function () {
+                var $this = $(this);
+                var $modal_dialog = $this.find('.modal-dialog');
+                // 关键代码，如没将modal设置为 block，则$modala_dialog.height() 为零
+                $this.css('display', 'block');
+                $modal_dialog.css({ 'margin-top': Math.max(0, ($(window).height() - $modal_dialog.height()) / 2) });
+            });
+            $(window).scroll(function () {
+                console.log($(document).scrollTop());
+                if ($(document).scrollTop() > 1085) {
+                    if ($('.backtotop').is(':hidden'))
+                        $('.backtotop').fadeIn('500');
+                }
+                if ($(document).scrollTop() <= 0)
+                    $('.backtotop').fadeOut('500');
+            });
+        });
+        var isLoading = false;
+        function loadmore(obj) {
+            if (isLoading)
+                return;
+            isLoading = true;
+            var index = ~~$(obj).data('index');
+            $.ajax({
+                url: '/Home/morequestions',
+                type: 'post',
+                data: { index: index, size: 25 },
+                success: function (res) {
+                    res = JSON.parse(res);
+                    if (res.success) {
+                        for (var i = 0; i < res.data.length; i++) {
+                            var tr = $('tr').eq(1).clone();
+                            tr.data('st', res.data[i].Status).data('user', res.data[i].Created_user);
+                            tr.find('td').eq(0).text(res.data[i].System);
+                            tr.find('td').eq(1).text(res.data[i].Describe);
+                            tr.find('td').eq(2).text(res.data[i].Created_Date);
+                            tr.click(function () { trClick(this); });
+                            $('table').append(tr);
+                        }
+                        $(obj).data('index', ++index);
+                        if (res.data.length <= 1)
+                            $(obj).text('没有更多数据了.');
+                    }
+                    else {
+                        $(obj).text('没有更多数据了.');
+                    }
+                },
+                error: function () {
+                },
+                complete: function () {
+                    isLoading = false;
+                }
+            });
+        }
+        function trClick(obj) {
+            $('#modal-status').text($(obj).data('st'));
+            if ($(obj).data('sl'))
+                $('#model-resultion').text($(obj).data('sl')).parent().show();
+            $('#modal-cotent').text($(obj).children().eq(1).text());
+            $('#modal-date').text($(obj).children().eq(2).text());
+            $('#modal-user').text($(obj).data('user'));
+            $('#modal-no').text($(obj).data('no'));
+            $('#myModal').modal();
+            $('#openImg').parent().hide()
+
+            //检查是否有附近，有的话就放出打开按钮
+            $.ajax({
+                url: "/Home/CheckAttach",
+                data: { 'projNo': $('#modal-no').text() },
+                type: "get",
+                dataType: "json",
+                success: function (res) {
+                    if (res.success) {
+                        data = res.data
+                        $('#openImg').parent().show()
+                        $('#openImg').parent().click(function () {
+                            $('#imgShow').attr('src', '/' + data).parent().slideDown()
+                        })
+                        $('#colseSpn').click(function () {
+                            $('#imgShow').parent().slideUp()
+                        })
+                    }
+                },
+                error: function (e) {
+                    //alert(e);
+                }
+            })
+
+        }
+    </script>
+</body>
+</html>

@@ -1,10 +1,10 @@
-using CCAfterSales.Models;
 using CCAS.Models;
+using CCAS.VModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 //using NLog;
 
-namespace CCAfterSales.Controllers
+namespace CCAS.Controllers
 {
     public class TestProviderController : Controller
     {

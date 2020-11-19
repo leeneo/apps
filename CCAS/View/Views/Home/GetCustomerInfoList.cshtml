@@ -1,0 +1,224 @@
+﻿@{
+    Layout = null;
+}
+
+@model CCAS.VModels.CustomerVm
+@using CCAS.Models;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0, user-scalable=no">
+    <title></title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+    <style>
+        .list-group-item:first-child {
+            border-radius: 0px;
+        }
+
+        #customerlist li {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            padding: 10px 5px 10px !important;
+        }
+
+            #customerlist li button {
+                float: right !important;
+            }
+
+            #customerlist li span {
+                float: none !important;
+            }
+
+        .backtotop {
+            display: none;
+            position: fixed;
+            right: 5px;
+            bottom: 48px;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            background-color: white;
+            border: 1px solid cadetblue;
+            border-radius: 4px;
+            box-shadow: 0px 0px 7px cadetblue;
+        }
+
+            .backtotop i {
+                margin-top: 14px;
+                font-size: 18px;
+                color: cadetblue;
+            }
+
+        #txtName {
+            width: 21rem;
+        }
+
+        @@media (max-width:767px) {
+            #txtName {
+                max-width: 78%;
+            }
+        }
+        @@media(min-width: 769px) {
+            .navbar .navbar-header {
+                background-color: #f8f8f8 !important;
+            }
+
+            .navbar .navbar-brand {
+                color: #669ece !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default" style="border:none;margin-bottom:0px;">
+        <div class="container-fluid">
+            <div class="navbar-header" style="background-color:#286090;">
+                <button type="button" style="background-color:white;" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#" style="color:white;"><i class="fa fa-users"></i>&nbsp;客户列表</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <form class="navbar-form navbar-left form-inline" style="border-top:none;">
+                    <div class="form-group" style="display:-webkit-box;">
+                        <input id="txtName" name="txtName" type="text" class="form-control" placeholder="请输入客户名称或拼音首字母">&nbsp;
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" onclick="queryInfo(this)">
+                            <i class="fa fa-search"></i>&nbsp;查询
+                        </button>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/Home/questions"><i class="fa fa-list"></i>&nbsp;提交记录</a></li>
+                    <li>
+                        <a href="#" onclick="if (confirm('确认要退出登录吗？')) location.href = '/Home/Exit';">
+                            <i class="fa fa-sign-out"></i>&nbsp;退出登录
+                        </a>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div>
+        <div>
+            <ul id="customerlist" class="list-group">
+                @{
+                    @*if (Model.customers != null && Model.customers.Count > 0)
+                    {
+                        foreach (PM_Customer item in Model.customers)
+                        {
+                            string tip = item.CustomerName;
+                            if ((item.status ?? string.Empty).ToLower() == "e")
+                            {
+                                <li data-flag="0" style="color:red" class="list-group-item" onclick="location.href='/Home/Index?txtName=@item.Customerid'">
+                                    <span>@item.CustomerName</span>
+                                    <span class="badge" style="color:red">未维护</span>
+                                    <button class="btn btn-info btn-xs" data-id="@item.Customerid">查看问题</button>
+                                </li>
+                            }
+                            else if (item.Validdate < DateTime.Now)
+                            {
+                                <li data-flag="1" style="background-color:#ddd;" class="list-group-item">
+                                    <span>@item.CustomerName</span>
+                                    <span class="badge">已到期</span>
+                                    <button class="btn btn-info btn-xs" data-id="@item.Customerid">查看问题</button>
+                                </li>
+                            }
+                            else
+                            {
+                                <li data-flag="2" class="list-group-item" onclick="location.href='/Home/Index?txtName=@item.Customerid'">
+                                    <span>@item.CustomerName</span>
+                                    <button class="btn btn-info btn-xs" data-id="@item.Customerid">查看问题</button>
+                                </li>
+                            }
+                        }
+                    }*@
+                }
+            </ul>
+            @*@if (Model.customers.Count >= 25)
+            {
+                <button id="btn-loadmore" class="btn btn-info" style="width:98%;margin:10px 1%;outline:none;" onclick="loadmore(this);" data-index="1">加载更多</button>
+            }*@
+        </div>
+    </div>
+    <div class="backtotop" onclick="$('html,body').animate({scrollTop: '0px'}, 500);">
+        <i class="fa fa-chevron-up"></i>
+    </div>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script>
+        function queryInfo(e) {
+            var name = $("#txtName").val();
+            window.location.href = "/Home/GetCustomerInfoList?txtName=" + name;
+        };
+        $(function () {
+            //监听滚动条
+            $(window).scroll(function () {
+                console.log($(document).scrollTop());
+                if ($(document).scrollTop() > 1085) {
+                    if ($('.backtotop').is(':hidden'))
+                        $('.backtotop').fadeIn('500');
+                }
+                if ($(document).scrollTop() <= 0)
+                    $('.backtotop').fadeOut('500');
+            });
+        })
+        $(function () {
+            $('.btn-xs').click(function (e) {
+                e.stopPropagation();
+                location.href = '/Home/questions?id=' + $(this).data('id');
+            });
+        })
+        var isLoading = false;
+        function loadmore(obj) {
+            if (isLoading)
+                return;
+            isLoading = true;
+            var index = ~~$(obj).data('index');
+            $.ajax({
+                url: '/Home/getmorecustomers',
+                type: 'post',
+                data: { index: index, size: 25 },
+                success: function (res) {
+                    res = JSON.parse(res);
+                    if (res.success) {
+                        for (var i = 0; i < res.data.length; i++) {
+                            if (!res.data[i].status || res.data[i].status.toLowerCase() == 'e') {
+                                var li = $('#customerlist').find("[data-flag='0']").first().clone();
+                                li.find('span').first().text(res.data[i].CustomerName);
+                            }
+                            else if (new Date(res.data[i].Validdate) < new Date()) {
+                                var li = $('#customerlist').find("[data-flag='1']").first().clone();
+                                li.find('span').first().text(res.data[i].CustomerName);
+                            }
+                            else {
+                                var li = $('#customerlist').find("[data-flag='2']").first().clone();
+                                li.find('span').first().text(res.data[i].CustomerName);
+                            }
+                            li.attr('onclick', 'location.href=\'/Home/Index?txtName=' + res.data[i].Customerid + '\'');
+                            $('#customerlist').append(li);
+                        }
+                        $(obj).data('index', ++index);
+                        if (res.data.length <= 1)
+                            $(obj).text('没有更多数据了.');
+                    }
+                    else {
+                        $(obj).text('没有更多数据了.');
+                    }
+                },
+                error: function () {
+                },
+                complete: function () {
+                    isLoading = false;
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

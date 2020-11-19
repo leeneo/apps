@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Data.SqlClient;
-using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Microsoft.AspNetCore.Mvc;
@@ -10,7 +9,6 @@ using CCAS.Models;
 using Microsoft.AspNetCore.Http;
 using CCAS.Utils;
 using MD5 = CCAS.Utils.MD5;
-using Microsoft.EntityFrameworkCore;
 using CCAS.VModels;
 using Microsoft.AspNetCore.Hosting;
 using CCAS.Filters;
@@ -51,7 +49,7 @@ namespace CCAS.Controllers
 
                 HttpCookie cookieUserType = new HttpCookie();
                 HttpCookie cookieOpenID = new HttpCookie();
-                cookieOpenID.Value = Request.Cookies["wechatOpenid"];  
+                cookieOpenID.Value = Request.Cookies["wechatOpenid"];
 
                 if (cookieUserType.Value == null)
                     cookieUserType.Value = new string("userType");
@@ -72,7 +70,7 @@ namespace CCAS.Controllers
                     //};
                     #endregion
 
-                    User user = Context.User.FirstOrDefault(x => x.workNo == account && x.Password == pwd && x.IsActive == "Y");
+                    User user = Context.User.FirstOrDefault(x => x.WorkNo == account && x.Password == pwd && x.IsActive == "Y");
                     if (user == null)
                         return Json(new { success = false, msg = "账号或密码错误。" });
                     user.WeChatID = cookieOpenID.Value;
@@ -154,11 +152,12 @@ namespace CCAS.Controllers
                     //    Expires = DateTime.Now.AddMonths(3),
                     //    IsEssential = true
                     //});
-                Response.Cookies.Append("UserName", userName, new CookieOptions()
-                {
-                    Expires = DateTime.Now.AddMonths(3),
-                    IsEssential = true
-                });
+                    Response.Cookies.Append("UserName", userName, new CookieOptions()
+                    {
+                        Expires = DateTime.Now.AddMonths(3),
+                        IsEssential = true
+                    });
+                }
                 return Json(new { success = true, msg = "登录成功。" });
             }
             catch (Exception ex)
@@ -171,7 +170,7 @@ namespace CCAS.Controllers
 
 
         [WeChatAuthorize(AuthorizeUrl = "https://open.weixin.qq.com/connect/oauth2/authorize?", OAuth2_URL = "http://ccas.leeneo.com/OAuth2/UserInfoCallback")]
-        [tAuthorizeFilter]
+        [PMAuthorizeFilter]
         /// <summary>
         /// 客户信息列表
         /// </summary>
@@ -224,7 +223,7 @@ namespace CCAS.Controllers
         //{
         //    try
         //    {
-                #region 上传图片
+        #region 上传图片
         //        var ImageName = "";
         //        var filePath = "";
         //        var imgPath = "";

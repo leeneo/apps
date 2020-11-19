@@ -1,0 +1,404 @@
+﻿@{
+    Layout = null;
+}
+@model CCAS.VModels.CustomerVm
+@using CCAS.Models;
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0, user-scalable=no">
+    <title></title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+    <style>
+        .txt {
+            height: 45px;
+        }
+
+        .btn-1 {
+            width: 19%;
+            height: 5%;
+            border: none;
+            position: absolute;
+            left: 73%;
+            bottom: 10%;
+            font-size: 0.8em;
+            border-radius: 2px;
+            background: #eea;
+        }
+
+        @@media(max-width: 768px) {
+            input.search {
+                width: 76% !important
+            }
+        }
+
+        @@media(min-width: 769px) {
+            .navbar .navbar-header {
+                background-color: #f8f8f8 !important;
+            }
+
+            .navbar .navbar-brand {
+                color: #669ece !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default" style="border:none;margin-bottom: 0px;border-bottom: 1px solid #ddd;">
+        <div class="container-fluid">
+            <div class="navbar-header" style="background-color:#286090;">
+                <button type="button" style="background-color:white;" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#" style="color:white;"><i class="fa fa-plus"></i>&nbsp;新增问题</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                @*@if (Convert.ToInt32(ViewBag.CustomerID) > 0)
+                {
+                    <form class="navbar-form navbar-left form-inline" style="border-top:none;">
+                        <div class="form-group" style="display:-webkit-box;">
+                            <input id="txtName" name="txtName" type="text" class="form-control search" placeholder="请输入客户名称或拼音首字母">&nbsp;
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" onclick="queryInfo(this)">
+                                <i class="glyphicon glyphicon-search"></i>&nbsp;查询
+                            </button>
+                        </div>
+                    </form>
+                }*@
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/Home/questions?id=@ViewBag.CustomerID"><i class="fa fa-list"></i>&nbsp;查看问题</a>
+                    </li>
+                    @if (ViewBag.UserType == "Y")
+                    {
+                        <li>
+                            <a href="/Home/getcustomerinfolist"><i class="fa fa-users"></i>&nbsp;客户列表</a>
+                        </li>
+                    }
+                    <li>
+                        <a href="#" onclick="if (confirm('确认要退出登录吗？')) location.href = '/Home/Exit';">
+                            <i class="fa fa-sign-out"></i>&nbsp;退出登录
+                        </a>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div style="padding: 20px;" id="body-box">
+        @*<form id="f" method="post" action="/Home/Index" enctype="multipart/form-data">*@
+        <div class="am-form-group am-form-icon">
+
+            <select id="selCustomerName" name="selCustomerName" data-placeholder="Your Favorite Type of Bear" style="width: 95%; height: 35px; margin-top: 2%; margin-left: 2%;" class="chosen-select-no-single" tabindex="9" onchange="systemInfo(this)">
+                @{
+                    @*if (Model.customers != null && Model.customers.Count > 0)
+                    {
+                        foreach (PM_Customer item in Model.customers)
+                        {
+                            if (item.Customerid != ViewBag.CustomerID)
+                            {
+                                <option value="@item.Customerid">@item.CustomerName</option>
+                            }
+                            else
+                            {
+                                <option selected="selected" value="@item.Customerid">@item.CustomerName</option>
+                            }
+                        }
+                    }*@
+                }
+                }
+            </select>
+        </div>
+        <div class="am-form-group am-form-icon">
+
+            <select id="selSystem" data-placeholder="Your Favorite Type of Bear" style="width: 95%; height: 35px; margin-top:2%; margin-left:2%; " class="chosen-select-no-single" tabindex="9" onchange="gradeChange(this)" name="systems">
+                @{
+                    @*if (Model.systems != null && Model.systems.Count > 0)
+                    {
+                        <option value="" selected="">选择所属系统</option>
+                        foreach (PM_System item in Model.systems)
+                        {
+                            <option value="@item.systemid">@item.systemname</option>
+                        }
+                    }*@
+                }
+            </select>
+
+        </div>
+        <div class="am-form-group am-form-icon">
+
+            <select id="selModel" data-placeholder="Your Favorite Type of Bear" style="width: 95%; height: 35px; margin-top: 2%; margin-left: 2%; " class="chosen-select-no-single" tabindex="9" name="models">
+                <option selected="">选择所属模块</option>
+            </select>
+        </div>
+        <div class="am-form-group am-form-icon">
+
+            <select id="selType" data-placeholder="Your Favorite Type of Bear" style="width: 95%; height: 35px; margin-top: 2%; margin-left: 2%; " class="chosen-select-no-single" tabindex="9" name="types">
+                @{
+                    @*if (Model.types != null && Model.types.Count > 0)
+                    {
+                        foreach (PM_ProjectType item in Model.types)
+                        {
+                            <option value="@item.Typeid">@item.TypeCode</option>
+                        }
+                    }*@
+                }
+            </select>
+        </div>
+        <div class="am-form-group am-form-icon">
+            <textarea id="txtIssue" style="width: 95%; height: 150px; margin-left:2%;margin-top:10px;" name="issue" placeholder="问题描述......"></textarea>
+        </div>
+        <div class="form-group" style="width:90%;height:10%;">
+            <input id="filePath_0" type="text" class="form-control h40" disabled="disabled" placeholder="未选择图片" style="margin-left:2%; width: 90%; height: 34px; margin-left: 2%; font-size:0.6em; ">
+            <span class="input-group-btn" style="float: right; margin-top: -37px; width: 57px; ">
+                <input type="file" id="img_0" class="fileName" name="img" accept="image/jpg,image/jpeg,image/png,image/gif" style="display:none" onchange="fileChange_0(this)">
+                <button class="btn btn-primary h40" style="outline: none; width:126%;height: 34px;margin-left:15%; margin-top:5%;" type="button" onclick="selectFile_0();">
+                    <i class="glyphicon glyphicon-folder-open"></i>&nbsp;&nbsp;浏览
+                </button>
+            </span>
+
+        </div>
+        <div class="am-form-group am-form-icon" style="width:70%; height:10%;margin-left: 2%;">
+            有数据库：<input id="cbxDal" type="checkbox" title="有数据库" name="dals" />
+        </div>
+        <button id="btnSub" type="submit" class="btn btn-primary btn-lg" style="width:98%;height:10%;outline:none;margin-top:10px;">
+            <i class="glyphicon glyphicon-cloud-upload"></i>&nbsp;提交
+        </button>
+        @*<button type="button" class="btn-1">问题查看</button>*@
+        <!-- 模态框（Modal） -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div style="padding:20px;padding-top:5%;">
+                        <ul class="list-group" style="list-style:none;" id="customerss"></ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            关闭
+                        </button>
+                        @*<button type="button" class="btn btn-primary">
+                                确定
+                            </button>*@
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+        @*</form>*@
+
+    </div>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $("#selModel").attr("disabled", "disabled");
+            $('#btnSub').click(function () {
+                var selCustomerName = $('#selCustomerName').val()
+                var selSystem = $('#selSystem').val()
+                var sys = '11,18,25,29,31,32,35,36'.split(',');//没有二级模块的系统代码
+                var hasModel = true;
+                var selModel = $('#selModel').val()
+                var selType = $('#selType').val()
+                var txtIssue = $('#txtIssue').val()
+                var hasDb = document.getElementById('cbxDal').checked
+                var imgFile = document.getElementById('img_0').files[0] //==>$('#img_0').get(0).filse(0)
+                var formData = new FormData()
+                formData.append("img", imgFile)
+                formData.append("selCustomerName", selCustomerName)
+                formData.append("systems", selSystem)
+                formData.append("models", selModel)
+                formData.append("types", selType)
+                formData.append("issue", txtIssue)
+                formData.append("dals", hasDb)
+
+                for (let i = 0; i < sys.length; i++) {
+                    if (sys[i] == selSystem)
+                        hasModel = false
+                }
+
+                if (!selCustomerName)
+                    alert('请选择客户！')
+                else if (!selSystem)
+                    alert('请选择所属系统！')
+                else if (hasModel && !selModel)
+                    alert('请选择所属模块！')
+                else if (!selType)
+                    alert('请选择问题类型！')
+                else if (!txtIssue || $.trim(txtIssue) == '')
+                    alert('请输入问题明细')
+                else {
+                    //var postData = { selCustomerName: selCustomerName, systems: selSystem, models: selModel, types: selType, issue: txtIssue, dals: hasDb }
+                    //$.ajax({
+                    //    type: "POST", //用POST方式传输
+                    //    //dataType: "JSON", //数据格式:JSON
+                    //    url: '/Home/InsertQuestion', //目标地址
+                    //    data: postData,
+                    //    success: function (res) {
+                    //        alert(res.msg)
+                    //        if (res.success) {
+                    //            location.href = "/Home/questions?id="+selCustomerName;
+                    //        }
+                    //    },
+                    //    error: function () {
+                    //    }
+                    //});
+
+                    $.ajax({
+                        url: "/Home/InsertQuestion",
+                        type: "POST",
+                        data: formData,
+                        cache: false,//上传文件无需缓存,
+                        /**
+                        *必须false才会自动加上正确的Content-Type
+                        */
+                        contentType: false,
+                        /**
+                        * 必须false才会避开jQuery对 formdata 的默认处理
+                        * XMLHttpRequest会对 formdata 进行正确的处理
+                        */
+                        processData: false,//用于对data参数进行序列化处理 这里必须false
+                        success: function (res) {
+                            alert(res.msg)
+                            if (res.success) {
+                                location.href = "/Home/questions?id=" + selCustomerName;
+                            }
+                        },
+                        error: function (e) {
+                            alert(e)
+                        }
+                    })
+                }
+            })
+        });
+
+        function gradeChange(e) {
+            //所属客户
+            var name = document.getElementById("selCustomerName");
+            var names = name.options[name.selectedIndex].value;
+            //所选系统
+            var objS = document.getElementById("selSystem");
+            var grade = objS.options[objS.selectedIndex].value;
+            //所属类型
+            var type = document.getElementById("selType");
+            var types = type.options[type.selectedIndex].value;
+
+            if (!grade) {
+                //alert('请选择所需系统。');
+                $("#selModel").html("");
+                $("#selModel").attr("disabled", "disabled");
+                return;
+            } else if (grade != "" || grade != null) {
+                $("#selModel").removeAttr("disabled");
+                $.ajax({
+                    url: "/Home/GetModelInfo",
+                    data: { grade: grade, names: names, types: types },
+                    type: "get",
+                    dataType: "json",
+                    success: function (data) {
+                        if (data != null) {
+                            var html = "";
+                            for (var i = 0; i < data.length; i++) {
+                                var item = data[i];
+                                var op = '<option value="' + item.s_code + '">' + item.s_descript + '</option>';
+                                html += op;
+                            }
+                            $("#selModel").html("<option value=''></option> " + html);
+                        }
+                    },
+                    error: function () {
+                        alert("加载错误！");
+                    }
+                });
+            }
+        }
+
+        function systemInfo(e) {
+            $("#selSystem").html();
+            //所属客户
+            var name = document.getElementById("selCustomerName");
+            var names = name.options[name.selectedIndex].value;
+
+            if (!names) {
+                $("#selSystem").html("");
+                $("#selModel").html("");
+                $("#selModel").attr("disabled", "disabled");
+                return;
+            } else {
+                $.ajax({
+                    url: "/Home/JsonSystemInfo",
+                    data: { txtName: names },
+                    type: "get",
+                    dataType: "json",
+                    success: function (data) {
+                        console.log(data);
+                        if (data != null) {
+                            var html = "";
+                            for (var i = 0; i < data.length; i++) {
+                                var item = data[i];
+                                var op = '<option value="' + item.systemid + '">' + item.systemname + '</option>';
+                                html += op;
+                            }
+                            $("#selSystem").html("<option value=''></option> " + html);
+                        }
+                    },
+                    error: function () {
+                        alert("加载错误！");
+                    }
+                });
+            }
+        }
+
+        function queryInfo(e) {
+            var name = $("#txtName").val();
+            var date = new Date();
+            var aa = "";
+            $.ajax({
+                url: "/Home/CustomerInfoList",
+                data: { txtName: name },
+                type: "get",
+                dataType: "json",
+                success: function (data) {
+                    if (data != null) {
+                        for (var i = 0; i < data.length; i++) {
+                            var item = data[i];
+                            var dt = item.validdate;
+                            var formatTime1 = convertTime(dt, "yyyy-MM-dd");//2015-07-11 14:12:29
+
+                            if (item.status == "e") {
+                                aa += '<a href="/Home/Index?txtName=' + item.customerid + ' " class="list-group-item"><li style="color:red">' + item.customerName + '</li><span style="margin-top: -21px;" class="badge">(未维护)</span></a>';
+                            }
+
+                            else if (formatTime1 < date) {
+                                aa += ' <a href="/Home/Index?txtName=' + item.customerid + ' " class="list-group-item"><li style="color:gray">' + item.customerName + '</li><span style="margin-top: -21px;" class="badge">(已到期)</span></a>';
+                            } else {
+                                aa += ' <a href="/Home/Index?txtName=' + item.customerid + ' " class="list-group-item"><li style="color:gray">' + item.customerName + '</li></a>';
+                            }
+                        }
+                    }
+                    $("#customerss").html(aa);
+                },
+                error: function () {
+                    alert("加载错误！");
+                }
+            });
+        }
+
+        function convertTime(jsonTime, format) {
+            var date = new Date(parseInt(jsonTime.replace("/Date(", "").replace(")/", ""), 10));
+            return date;
+        }
+
+        function selectFile_0() {
+            var f = $("#img_0");
+            f.click();
+        }
+        function fileChange_0(f) {
+            var s = f.value;
+            $("#filePath_0").val(s);
+        }
+    </script>
+</body>
+</html>

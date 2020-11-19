@@ -20,7 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Controllers\TestProviderController.cs" />
     <Compile Remove="Models\LoggerProvider.cs" />
     <Compile Remove="Models\WxMenus.cs" />
     <Compile Remove="Utils\Constant.cs" />
@@ -44,6 +43,7 @@
 
   <ItemGroup>
     <None Include="bundleconfig.json" />
+    <None Include="Views\Contact\NewBind.cshtml" />
   </ItemGroup>
 
   <ItemGroup>

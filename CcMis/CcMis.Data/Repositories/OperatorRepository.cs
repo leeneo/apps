@@ -6,9 +6,9 @@ namespace CcMis.Data.Repositories
 {
     public class OperatorRepository : IOperatorRepository
     {
-        private newhotel_xyjdContext _dbContext = null;
+        private HotelContext _dbContext = null;
 
-        public OperatorRepository(newhotel_xyjdContext dbContext)
+        public OperatorRepository(HotelContext dbContext)
         {
             _dbContext = dbContext;
         }

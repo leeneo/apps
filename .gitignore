@@ -104,3 +104,6 @@ CcMis/.vs/CcMis/v15/.suo
 CSharp/.vs/CSharp/v15/.suo
 /CSharp/.vs
 ChangeImg/ChangeImg/obj/Debug/ChangeImg.csproj.CoreCompileInputs.cache
+CCAS/View/Utils/Encryption.cs
+CCAS/View/Utils/MD5.cs
+CcMis/CcMis.Models/HotelContext.cs

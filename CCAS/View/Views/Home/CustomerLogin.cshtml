@@ -1,0 +1,85 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0, user-scalable=no">
+    <title></title>
+    <link href="~/css/amazeui.min.css" rel="stylesheet" />
+    <style>
+        .txt {
+            height: 45px;
+        }
+
+        .line {
+            border-bottom: 1px solid lightgray;
+        }
+
+        .top-box {
+            width: 100%;
+            background-color: #1289e0;
+            height: 55px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-box">
+        <h3 style="color:white;padding-top:12px;">登录</h3>
+    </div>
+    <form id="f" method="post" action="/Home/PostCustomerLogin" style="padding:20px;padding-top:25%;">
+        <div class="am-form-group am-form-icon">
+            <i class="am-icon-user" style="color:#0997de;"></i>
+            <input id="account" type="text" class="am-form-field txt" placeholder="请输入您的账号" value="">
+        </div>
+        <div class="am-form-group am-form-icon">
+            <i class="am-icon-keyboard-o"></i>
+            <input id="pwd" type="password" class="am-form-field txt" placeholder="请输入您的密码" value="">
+        </div>
+        <div class="am-form-group am-form-icon" style="overflow:hidden;">
+            <a href="/Contact/NewBind" style="float:left;">新用户注册/客户绑定</a>
+            <span style="float:right">管理员<input id="cbxUser" name="cbxUser" type="checkbox" /></span>
+        </div>
+        <button id="btnSubmit" type="button" class="am-btn am-btn-primary" style="width:100%;height:45px;outline:none;">登录</button>
+    </form>
+    @*<a href="/Test/CreateMenu">Test</a>*@
+    <script src="~/js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('#btnSubmit').click(function () {
+                var account = $("#account").val();
+                var pwd = $("#pwd").val();
+                var cbxUser = "N";
+                if ($("#cbxUser").is(":checked")) {//选中
+                    cbxUser = "Y"
+                }
+                if (!account || !pwd) {
+                    alert('账号或密码不能为空。');
+                    return;
+                }
+                $(this).text('正在登录').prop("disabled", true);
+                $.post("/Home/PostCustomerLogin", { account: account, pwd: pwd, cbxUser: cbxUser }, function (data) {
+                    if (data.success) {
+                        //登录成功进入页
+                        if ($("#cbxUser").is(":checked")) {//选中
+                            window.location.href = '/Home/GetCustomerInfoList';
+                        } else {
+                            window.location.href = '/Home/Index';
+                        }
+                    }
+                    else {
+                        if (data.code == '0')
+                            location.href = data.msg
+                        else
+                            alert(data.msg);
+                    }
+                    $('#btnSubmit').text('登录').prop("disabled", false);
+                });
+            })
+        })
+    </script>
+</body>
+</html>
