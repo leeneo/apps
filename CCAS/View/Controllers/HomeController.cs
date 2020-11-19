@@ -187,14 +187,14 @@ namespace CCAS.Controllers
 
             try
             {
-                string customer = "";
-                string system = "";
+                // string customer = "";
+                // string system = "";
 
 
                 #region 原生 SQL 查询
                 //CustomerVm vm = new CustomerVm();
-                ////通过 Entity Framework Core 可以在使用关系数据库时下降到原始 SQL 查询。 这在无法使用 LINQ 表达要执行的查询，或因使用 LINQ 查询导致低效的 SQL 被发送到数据库时非常有用。 原始 SQL 查询可返回实体类型
-                ////结果集中的列名必须与属性映射到的列名匹配。 请注意，这与 EF6 不同，EF6 中忽略了原始 SQL 查询时的属性/ 列映射关系，只需结果集列名与属性名相匹配即可
+                //通过 Entity Framework Core 可以在使用关系数据库时下降到原始 SQL 查询。 这在无法使用 LINQ 表达要执行的查询，或因使用 LINQ 查询导致低效的 SQL 被发送到数据库时非常有用。 原始 SQL 查询可返回实体类型
+                //结果集中的列名必须与属性映射到的列名匹配。 请注意，这与 EF6 不同，EF6 中忽略了原始 SQL 查询时的属性/ 列映射关系，只需结果集列名与属性名相匹配即可
                 //vm.customers = Context.t_Customer.FromSql(customer).ToList();
                 //vm.systems = Context.t_System.FromSql(system).ToList();
                 #endregion
