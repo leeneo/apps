@@ -81,8 +81,8 @@ namespace CCAS
             });
 
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);  //解决中文乱码的问题
-            loggerFactory.AddConsole();//内置日志
-            loggerFactory.AddDebug();
+            // loggerFactory.AddConsole();  //内置日志 已过时，需修改
+            // loggerFactory.AddDebug();             //已过时，需修改
             //loggerFactory.AddProvider(new LoggerProvider("./log.txt"));   //自定义日志，怎样调用？
             NLog.LogManager.LoadConfiguration($@"{env.ContentRootPath}/Nlog.config");
         }
