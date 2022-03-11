@@ -3,15 +3,15 @@
 int main()
 {
     int i = 0;
-    printf("ÇëÊäÈë a number \n");
+    printf("è¯·è¾“å…¥ a number \n");
     // scanf("%d", &i);
-    scanf("%2d", &i);        //Ö»½ØÈ¡Ç°Á½Î»
+    scanf("%2d", &i);        //åªæˆªå–å‰ä¸¤ä½
     printf("%%d==>%d\n", i);
     printf("%%2d==>%2d\n", i);
     printf("%%02d==>%02d\n", i);
     printf("%%.2d==>%.2d\n", i);
     printf("%%s==>%s\n", "i");
-    puts("%d %s %%\n"); //ÎŞ¸ñÊ½Êä³ö
+    puts("%d %s %%\n"); //æ— æ ¼å¼è¾“å‡º
 
     return 0;
 }

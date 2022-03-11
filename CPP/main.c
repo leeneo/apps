@@ -9,6 +9,7 @@ int Test()
 {
     // int i = 9;
     // printf("i=%d\n", i);
+    printf("ÖĞÎÄ²âÊÔ");
     return 0;
 }
 
